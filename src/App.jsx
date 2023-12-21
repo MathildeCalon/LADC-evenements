@@ -25,8 +25,18 @@ function App() {
       <p id="slogan">LADC ÉVÉNEMENTS : Votre Événement, Notre Engagement.</p>
 
       <figure>
-        <img src='exemple_noel.jpg' alt="Exemple d'installation de la borne karaoké" id="image-noel"></img>
+        <img src='exemple_noel.jpg' alt="Exemple d'installation de la borne karaoké" class="image-noel"></img>
         <figcaption>Prestation "Goûter de Noël"</figcaption>
+      </figure>
+
+      <figure>
+        <img src='entreprise-noel.jpg' alt="Photo de tables pour prestation de Noël en entreprise" class="image-noel"></img>
+        <figcaption>Prestation "Soirée de Noël - Entreprise"</figcaption>
+      </figure>
+
+      <figure>
+        <img src='entreprise-noel-sono.jpg' alt="Photo d'installation de la sono pour prestation de Noël en entreprise" class="image-noel"></img>
+        <figcaption>Prestation "Soirée de Noël - Entreprise"</figcaption>
       </figure>
 
     </div>
