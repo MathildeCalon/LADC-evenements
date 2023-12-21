@@ -30,6 +30,10 @@ function App() {
       </figure>
 
     </div>
+
+    <footer>
+      <p id="web-developpement">Développement web : <a href="https://www.linkedin.com/in/mathildecalon/" target="blank">Mathilde Calon</a></p>
+    </footer>
     </>
   )
 }
