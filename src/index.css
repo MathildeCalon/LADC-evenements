@@ -3,13 +3,8 @@ html {
   --theme-dark-blue: #003E51;
 }
 
-@font-face {
-  font-family: "Bodoni MT Condensed";
-  src: url(fonts/bod_cr.ttf);
-}
-
 :root {
-  font-family: Bodoni MT Condensed;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   background-image: url(/background.jpg);
   background-position: center;

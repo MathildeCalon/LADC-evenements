@@ -1,13 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   return (
     <>
      <div className='main'>
-     <img src="logo-blue.png" alt="Logo de LADC Evenements" id="logo-accueil"></img>
+     <img src="logo-vectorise.png" alt="Logo de LADC Evenements" id="logo-accueil"></img>
       <h1>Bienvenue chez LADC ÉVÉNEMENTS - Ajoutez un plus à vos soirées !</h1>
 
       <div id="presentation"> 
