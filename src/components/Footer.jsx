@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss';
-import anthony from '../assets/images/anthony_coucke.png';
+import anthony from '/images/anthony_coucke.png';
 
 function Footer () {
     return (
@@ -13,14 +13,22 @@ function Footer () {
                 </ul>
             </div>
             
-            <div id="social-media">
-                <a href="https://www.facebook.com/profile.php?id=61552552079121"><i className="fa-brands fa-facebook"></i>
-                <span className='mr-5'>Facebook</span></a>
-                <a href="https://www.instagram.com/ladcevenements?igsh=MWN3Z3c0azhvaXV6dg=="><i className="fa-brands fa-instagram"></i>
+            <div className="d-flex flex-column mr-15">
+                <div className='mt-5'>
+                    <a href="https://www.facebook.com/profile.php?id=61552552079121"><i className="fa-brands fa-facebook mr-5"></i>
+                    <span className='mr-5'>Facebook</span></a>
+                </div>
+
+                <div className='mt-5'></div>
+                    <a href="https://www.instagram.com/ladcevenements?igsh=MWN3Z3c0azhvaXV6dg=="><i className="fa-brands fa-instagram mr-5"></i>
                     <span className='mr-5'>Instagram</span></a>
+                    </div>
+
+                    <div className='mt-5'>
+                    <a href="https://www.linkedin.com/in/mathildecalon/" target="blank">
+                    <span className={styles.webdeveloppement}><i className="fa-solid fa-code mr-5"></i>Mathilde Calon</span></a>
             </div>
 
-            <p className={styles.webdeveloppement}>Développement web : <a href="https://www.linkedin.com/in/mathildecalon/" target="blank">Mathilde Calon</a></p>
         </footer>
     )
 }

@@ -1,9 +1,7 @@
 .footer {
-    height: 10%;
     width: 100%;
     background-color: var(--header-footer-color);
     color: var(--text-color);
-    position: fixed;
     bottom: 0;
     img {
         width: 60px;
@@ -17,11 +15,6 @@ color: var(--text-color);
 
 footer ul {
 list-style-type: none;
-}
-
-#social-media {
-display: flex;
-flex-direction: column;
 }
 
 .webdeveloppement {

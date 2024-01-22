@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Content from './components/Content.jsx';

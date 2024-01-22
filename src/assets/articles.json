@@ -1,0 +1,100 @@
+[
+    {
+    "id":"1",
+    "titre": "Borne karaoké",
+    "description": "",
+    "prix": 60,
+    "photo": "borne_karaoke.png"
+    },
+        {
+    "id":"2",
+    "titre": "Ecran",
+    "description": "Dimensions 175 * 175",
+    "prix": 10,
+    "photo": "ecran_projection.png"
+    },
+    {
+    "id":"3",
+    "titre": "Jeux de lumière",
+    "description": "A l'unité",
+    "prix": 40,
+    "photo": "jeux_de_lumiere.png"
+    },
+    {
+    "id":"4",
+    "titre": "Machine à fumée",
+    "description": "Produit inclus",
+    "prix": 20,
+    "photo": "machine_a_fumee.png"
+    },
+    {
+    "id":"5",
+    "titre": "Machine à Popcorn",
+    "description": "",
+    "prix": 40,
+    "photo": "machine_popcorn.png"
+    },
+    {
+    "id":"6",
+    "titre": "Mange debout",
+    "description": "Lycra blanc inclus",
+    "prix": 8,
+    "photo": "mange_debout.png"
+    },
+    {
+    "id":"7",
+    "titre": "Perfectdraft",
+    "description": "",
+    "prix": 20,
+    "photo": "perfectdraft.png"
+    },
+    {
+    "id":"8",
+    "titre": "Sono 400W",
+    "description": "",
+    "prix": 50,
+    "photo": "sono.png"
+    },
+    {
+    "id":"9",
+    "titre": "Vidéoprojecteur",
+    "description": "",
+    "prix": 40,
+    "photo": "videoprojecteur.png"
+    },
+    {
+    "id":"10",
+    "titre": "Micro",
+    "description": "Pied inclus",
+    "prix": 10,
+    "photo": "microphone.png"
+    },
+    {
+    "id":"11",
+    "titre": "Bartop Arcade",
+    "description": "",
+    "prix": 90,
+    "photo": "arcade.png"
+    },
+    {
+    "id":"12",
+    "titre": "Bonbons (petit)",
+    "description": "Petit format",
+    "prix": 1,
+    "photo": "bonbons_petit.png"
+    },
+    {
+    "id":"13",
+    "titre": "Bonbons (grand)",
+    "description": "",
+    "prix": 2,
+    "photo": "bonbons_grand.png"
+    },
+    {
+    "id":"14",
+    "titre": "Kit Popcorn",
+    "description": "Pour 10 personnes. Inclus : maïs, sachets, huile",
+    "prix": 8,
+    "photo": "popcorn.png"
+    }
+]
