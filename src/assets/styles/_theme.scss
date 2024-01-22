@@ -1,0 +1,26 @@
+.btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s opacity;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.btn-primary {
+    background-color: var(--logo-blue);
+    color: white;
+    border: 1px solid var(--logo-blue);
+}
+
+.btn-reverse-primary {
+    border: 2px solid var(--logo-blue);
+    color: var(--logo-blue);
+    background-color: white;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: white;
+}
