@@ -13,3 +13,13 @@ h1 {
 .contentCard {
     width: 1130px;
 }
+
+@media only screen and (max-width: 500px) {
+    .grid {
+        grid-template-columns: none;
+        grid-auto-columns: none;
+    };
+    .contentCard {
+        width: auto;
+    }
+}
