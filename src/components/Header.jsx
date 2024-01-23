@@ -12,14 +12,21 @@ function Header (){
 
             <nav>
                 <lu>
-                    <a href='#liste-articles'>
+                    <a href="#presentation">
                         <button className='mr-5 btn btn-primary'>
-                                <span>Liste des articles</span>
+                        Présentation
                         </button>
                     </a>
-                    <button className='mr-5 btn btn-primary'>
-                        <span>Contact</span>
-                    </button>
+                    <a href='#liste-articles'>
+                        <button className='mr-5 btn btn-primary'>
+                        Liste des articles
+                        </button>
+                    </a>
+                    <a href='#contact'>
+                        <button className='mr-5 btn btn-primary'>
+                        Contact
+                        </button>
+                    </a>
 
                 </lu>
             </nav>

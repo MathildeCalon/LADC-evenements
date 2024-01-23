@@ -1,22 +1,10 @@
 .footer {
     width: 100%;
     background-color: var(--header-footer-color);
-    color: var(--text-color);
     bottom: 0;
-    img {
-        width: 60px;
-    }
 }
 
 footer a {
 text-decoration: none;
 color: var(--text-color);
-}
-
-footer ul {
-list-style-type: none;
-}
-
-.webdeveloppement {
-font-style: italic;
 }
