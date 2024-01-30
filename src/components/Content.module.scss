@@ -8,6 +8,7 @@
 
 h1 {
     text-transform: uppercase;
+    font-size: 3.5rem;
 }
 
 .contentCard {
@@ -25,6 +26,7 @@ h1 {
         overflow: hidden;
         float: right;
         width: 50%;
+        align-items: center;
         img {
             width: 100%;
             height: auto;
@@ -42,11 +44,14 @@ h1 {
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .grid {
         grid-template-columns: none;
         grid-auto-columns: none;
     };
+    h1 {
+        font-size: 2.5rem;
+    }
     .contentCard {
         width: auto;
     };

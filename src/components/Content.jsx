@@ -13,7 +13,7 @@ function Content() {
                     <p>LADC ÉVÉNEMENTS s'engage à rendre votre expérience de location simple, agréable et sans tracas. Nous sommes là pour vous conseiller et vous accompagner à chaque étape, assurant ainsi le succès de votre événement. De plus, nous proposons notre présence lors de votre événement, vous laissant ainsi libre de savourer pleinement chaque moment.
                     </p>
                 </div>
-                <div className={styles.imgAnthony}>
+                <div className={`${styles.imgAnthony} d-flex`}>
                     <img src="/images/anthony_coucke_framed.png" alt="Photo de Anthony Coucke"/>
                 </div>
             </div>

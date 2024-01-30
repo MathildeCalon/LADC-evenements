@@ -67,7 +67,7 @@
     "titre": "Micro",
     "description": "Pied inclus",
     "prix": 10,
-    "photo": "microphone.png"
+    "photo": "micro.png"
     },
     {
     "id":"11",
@@ -78,15 +78,15 @@
     },
     {
     "id":"12",
-    "titre": "Bonbons (petit)",
-    "description": "Petit format",
+    "titre": "Bonbons",
+    "description": "Petit sachet",
     "prix": 1,
     "photo": "bonbons_petit.png"
     },
     {
     "id":"13",
-    "titre": "Bonbons (grand)",
-    "description": "",
+    "titre": "Bonbons",
+    "description": "Grand sachet",
     "prix": 2,
     "photo": "bonbons_grand.png"
     },
