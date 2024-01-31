@@ -11,9 +11,6 @@ function Header (){
             </div>
 
             <nav>
-                <div className={styles.headerNavResponsive}>
-                    <i className={`${styles.menuBurger} fa-solid fa-bars mr-15`}/>
-                </div>
                 <ul className={styles.navLinks}>
                     <a href="#presentation">
                         <button className='mr-15 btn btn-primary'>

@@ -12,19 +12,16 @@
 button {
     font-weight: bold;
     pointer-events: painted;
-}
-
-@media screen and (min-width:791px){
-    .headerNavResponsive {
-        display: none;
-    }
-}
+};
 
 @media screen and (max-width: 790px) {
     .navLinks {
         display: none;
     }
-    .menuBurger {
-        font-size: 2rem;
+    .header {
+        img {
+            display: flex;
+            margin: auto;
+        }
     }
 }
