@@ -44,6 +44,14 @@ h1 {
     }
 }
 
+// RESPONSIVE
+@media screen and (max-width: 1100px){
+    .grid {
+        grid-template-columns: repeat(2, 350px);
+        grid-auto-columns: repeat(2, 350px);
+    }
+}
+
 @media screen and (max-width: 790px) {
     .grid {
         grid-template-columns: none;
@@ -54,7 +62,7 @@ h1 {
     };
     h2 {
         font-size: 1.2rem;
-    }
+    };
     .contentCard {
         width: auto;
     };

@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 function Footer () {
     return (
         <footer className={`${styles.footer} d-flex flex-row align-items-center p-5`}>
-                <div className='mr-5 w-33 '>
+                <div className='mr-5 w-33'>
                     <a href="https://www.facebook.com/profile.php?id=61552552079121" target='blank'>
                     <i className="fa-brands fa-facebook mr-5"></i>
                     Facebook</a>

@@ -11,9 +11,9 @@
 
 button {
     font-weight: bold;
-    pointer-events: painted;
 };
 
+// RESPONSIVE
 @media screen and (max-width: 790px) {
     .navLinks {
         display: none;

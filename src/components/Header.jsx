@@ -27,9 +27,9 @@ function Header (){
                         Contact
                         </button>
                     </a>
-
                 </ul>
             </nav>
+            
         </header>
     )
 }
