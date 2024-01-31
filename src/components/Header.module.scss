@@ -5,6 +5,7 @@
     position: fixed;
     img {
         width: 150px;
+        padding: 2px;
     }
 }
 
@@ -13,17 +14,17 @@ button {
     pointer-events: painted;
 }
 
-@media screen and (min-width:501px){
-    .menuBurger {
+@media screen and (min-width:791px){
+    .headerNavResponsive {
         display: none;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 790px) {
     .navLinks {
         display: none;
     }
-    .menu-burger {
-        display: block;
+    .menuBurger {
+        font-size: 2rem;
     }
 }

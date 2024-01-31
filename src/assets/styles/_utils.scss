@@ -1,3 +1,17 @@
+.container {
+    max-width: 1200px;
+    margin-top: 140px;
+    margin-right:auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.w-33 {
+    width: 33%;
+}
+
+// PADDINGS
 .p-5 {
     padding: 5px;
 }
@@ -11,47 +25,66 @@
     padding: 30px;
 }
 
+// MARGIN
 .m-5 {
     margin: 5px;
 }
-.mr-5 {
-    margin-right: 5px;
-}
-.mt-5 {
-    margin-top: 5px;;
-}
+
 .m-10 {
     margin: 10px;
 }
-.mr-15 {
-    margin-right: 15px;
-}
+
 .m-20 {
     margin: 20px;
 }
+
 .m-30 {
     margin: 30px;
 }
 
+// MARGIN RIGHT
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+// MARGIN TOP
+.mt-5 {
+    margin-top: 5px;;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+// MARGIN BOTTOM
 .mb-20 {
     margin-bottom: 20px;
 }
 
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+// MARGIN TOP BOTTOM
 .my-30 {
     margin-bottom: 30px;
     margin-top: 30px;
 }
 
+.my-100 {
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
 .my-15 {
     margin-bottom: 15px;
     margin-top: 15px;
-}
-
-.container {
-    max-width: 1200px;
-    margin-top: 140px;
-    margin-right:auto;
-    margin-left: auto;
-    margin-bottom: auto;
-    width: 100%;
 }
