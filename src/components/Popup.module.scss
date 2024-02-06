@@ -4,14 +4,15 @@
     top:0;
     width: 100%;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
 };
 
 .box {
     position: relative;
-    width: 50%;
-    min-height: 300px;
+    width: 40%;
+    min-height: 200px;
     border: 1px solid var(--logo-blue);
-    background-color: var(--header-footer-color);
+    background-color: var(--main-background-color, 1);
     border-radius: 10px;
     margin: 20% auto;
     overflow: auto;
@@ -20,5 +21,14 @@
 .btnClose {
     cursor: pointer;
     position: fixed;
-    right: 26%;
+    right: 30.5%;
+    font-size: 1.5rem;
+}
+
+// RESPONSIVE
+@media screen and (max-width: 790px){
+    .box {
+        top: 20%;
+        right: auto;
+    }
 }

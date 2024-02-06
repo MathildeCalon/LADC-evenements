@@ -49,7 +49,7 @@ function Content() {
 
             {isOpen && <Popup
             handleClose={togglePopup}
-            content={<div>
+            content={<div className='d-flex flex-column justify-content-center align-items-center p-20'>
                 <h3>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
                 <label for="newsletter">Votre adresse email : </label>
                 <input type="email" id="newsletter" name="newsletter"/>
