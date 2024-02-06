@@ -25,10 +25,20 @@
     font-size: 1.5rem;
 }
 
+input {
+    border-radius: 5px;
+    width: 50%;
+}
+
 // RESPONSIVE
 @media screen and (max-width: 790px){
     .box {
+        width: 60%;
         top: 20%;
         right: auto;
+    }
+
+    input {
+        width: 100%;
     }
 }

@@ -50,9 +50,12 @@ function Content() {
             {isOpen && <Popup
             handleClose={togglePopup}
             content={<div className='d-flex flex-column justify-content-center align-items-center p-20'>
-                <h3>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
-                <label for="newsletter">Votre adresse email : </label>
-                <input type="email" id="newsletter" name="newsletter"/>
+                <h3 className='m-10'>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
+                <form action="http://localhost:3000/newsletter" method="post">
+                    <label for="newsletter" className='m-10'>Votre adresse email</label>
+                    <input type="email" id="newsletter" name="newsletter"/>
+                    <button type='submit' id='validateBtn' className='btn btn-primary m-10'>S'INSCRIRE</button>
+                </form>
             </div>}/>}
 
         </div>
