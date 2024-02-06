@@ -1,7 +1,14 @@
 import styles from './Content.module.scss';
+import Popup from './Popup';
 import Articles from './Article';
+import React, { useState } from 'react';
 
 function Content() {
+    const [isOpen, setIsOpen] = useState(false);
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <div className='flex-fill container p-20'>
             <h1 className="my-100 d-flex justify-content-center">LADC ÉVÉNEMENTS : <br/>Votre Événement, Notre Engagement.</h1>
@@ -35,6 +42,19 @@ function Content() {
                     <li><i className="fa-solid fa-at mr-5"></i>ladcevenements@gmail.com</li>
                 </ul>
             </div>
+
+            <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>
+            NEWSLETTER
+            </div>
+
+            {isOpen && <Popup
+            handleClose={togglePopup}
+            content={<div>
+                <h3>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
+                <label for="newsletter">Votre adresse email : </label>
+                <input type="email" id="newsletter" name="newsletter"/>
+            </div>}/>}
+
         </div>
     )
 }

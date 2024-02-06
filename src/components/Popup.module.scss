@@ -1,0 +1,24 @@
+.popupBox {
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100vh;
+};
+
+.box {
+    position: relative;
+    width: 50%;
+    min-height: 300px;
+    border: 1px solid var(--logo-blue);
+    background-color: var(--header-footer-color);
+    border-radius: 10px;
+    margin: 20% auto;
+    overflow: auto;
+}
+
+.btnClose {
+    cursor: pointer;
+    position: fixed;
+    right: 26%;
+}

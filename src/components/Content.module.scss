@@ -44,11 +44,30 @@ h1 {
     }
 }
 
+.sideBar {
+    background-color: var(--logo-blue);
+    color: var(--main-background-color);
+    position: fixed;
+    right: 0;
+    top: 40%;
+    border-radius: 10px 0px 0px 10px;
+    font-weight: bold;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    cursor: pointer;
+}
+
 // RESPONSIVE
 @media screen and (max-width: 1100px){
     .grid {
         grid-template-columns: repeat(2, 350px);
         grid-auto-columns: repeat(2, 350px);
+    }
+    .sideBar {
+        top: 8%;
+        right: 15px;
+        writing-mode: horizontal-tb;
+        border-radius: 10px 10px 10px 10px;
     }
 }
 
