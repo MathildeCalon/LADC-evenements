@@ -2,6 +2,7 @@ import styles from './Content.module.scss';
 import Popup from './Popup';
 import Articles from './Article';
 import React, { useState } from 'react';
+import logo from '/images/logo-banner.png';
 
 function Content() {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,10 +51,13 @@ function Content() {
             {isOpen && <Popup
             handleClose={togglePopup}
             content={<div className='d-flex flex-column justify-content-center align-items-center p-20'>
+                <img src={logo} alt="Logo de LADC Evenements"/>
                 <h3 className='m-10'>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
-                <form action="http://localhost:3000/newsletter" method="post">
-                    <label for="newsletter" className='m-10'>Votre adresse email</label>
-                    <input type="email" id="newsletter" name="newsletter"/>
+                <form action="http://localhost:3000/newsletter" method="post" className='d-flex flex-column'>
+                    <label for="firstname" className='m-10'>Votre prénom</label>
+                    <input type="text" id="firstname" name="firstname"/>
+                    <label for="email" className='m-10'>Votre adresse email</label>
+                    <input type="email" id="email" name="email"/>
                     <button type='submit' id='validateBtn' className='btn btn-primary m-10'>S'INSCRIRE</button>
                 </form>
             </div>}/>}

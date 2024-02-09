@@ -32,15 +32,15 @@ router.post("/newsletter",
     async (req, res)=>{
         try {
             // RECUPERATION DE L'ADRESSE MAIL
-            const email = req.body.newsletter;
+            const {firstname, email} = req.body;
 
             // CONNEXION A LA BDD
             await client.connect();
 
             // INSERTION EN BDD
             const insertQuery = {
-                text: `INSERT INTO "newsletter"(email, subscribed) VALUES ($1, 'true')`,
-                values: [email]
+                text: `INSERT INTO "newsletter"(prenom, email, inscription) VALUES ($1, $2, 'true')`,
+                values: [firstname, email]
             }
             const response = await client.query(insertQuery);
 

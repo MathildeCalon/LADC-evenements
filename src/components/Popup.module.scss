@@ -1,5 +1,7 @@
 .popupBox {
+    display: grid;
     position: fixed;
+    place-items: center;
     left:0;
     top:0;
     width: 100%;
@@ -8,7 +10,6 @@
 };
 
 .box {
-    position: relative;
     width: 40%;
     min-height: 200px;
     border: 1px solid var(--logo-blue);
@@ -27,7 +28,11 @@
 
 input {
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
+}
+
+img {
+    width: 35%;
 }
 
 // RESPONSIVE
