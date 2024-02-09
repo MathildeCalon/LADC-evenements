@@ -9,7 +9,10 @@ const { Client } = pg;
 const app = express();
 const router = express.Router();
 
-const client = new Client(process.env.DATABASE_URL)
+// CONNEXION A LA BDD
+const client = new Client(process.env.DATABASE_URL);
+client.connect();
+
 const PORT = process.env.PORT;
 
 app.use(express.json());
@@ -19,7 +22,7 @@ app.use(express.urlencoded({extended: true}));
 // AUTORISE LA COMMUNICATION ENTRE LE FRONT ET LE BACK //
 app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin: 'https://localhost:5173/',
       credentials: true,
       methods: 'GET,PATCH,POST,DELETE',
     })
@@ -30,12 +33,10 @@ app.use(router);
 // === INSCRIPTION A LA NEWSLETTER === //
 router.post("/newsletter", 
     async (req, res)=>{
+
         try {
             // RECUPERATION DE L'ADRESSE MAIL
             const {firstname, email} = req.body;
-
-            // CONNEXION A LA BDD
-            await client.connect();
 
             // INSERTION EN BDD
             const insertQuery = {
@@ -45,12 +46,10 @@ router.post("/newsletter",
             const response = await client.query(insertQuery);
 
             if(!response.rowCount){
-                console.log(`Erreur lors de l'inscription`)
+                console.log(`Erreur lors de l'inscription`);
             } else {
-                console.log("Inscription réussie.")
+                console.log(`Inscription réussie.`);
             }
-            // FERMETURE DE LA CONNEXION
-            await client.end();
         } catch(error) {
             console.error(error);
         };

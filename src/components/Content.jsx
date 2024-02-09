@@ -9,6 +9,12 @@ function Content() {
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
+    const [showMessage, setShowMessage] = useState(false)
+    const toggleDisplay = () => {
+        setTimeout(()=>{
+            setMessage(!showMessage);
+        })
+    }
 
     return (
         <div className='flex-fill container p-20'>
@@ -55,13 +61,13 @@ function Content() {
                 <h3 className='m-10'>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
                 <form action="http://localhost:3000/newsletter" method="post" className='d-flex flex-column'>
                     <label for="firstname" className='m-10'>Votre prénom</label>
-                    <input type="text" id="firstname" name="firstname"/>
+                    <input type="text" id="firstname" name="firstname" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$"/>
                     <label for="email" className='m-10'>Votre adresse email</label>
                     <input type="email" id="email" name="email"/>
-                    <button type='submit' id='validateBtn' className='btn btn-primary m-10'>S'INSCRIRE</button>
+                    <button type='submit' id='validateBtn' className='btn btn-primary m-10' onClick={toggleDisplay}>S'INSCRIRE</button>
                 </form>
-            </div>}/>}
-
+            </div>}
+            />}
         </div>
     )
 }
