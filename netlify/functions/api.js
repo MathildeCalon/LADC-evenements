@@ -66,4 +66,4 @@ router.post("/unsubscribe",
     })
 
 app.use('/.netlify/functions/api', router);
-module.exports.handler = serverless(app);
+module.exports.handler = new serverless(app);
