@@ -7,9 +7,10 @@ dotenv.config();
 const { Client } = pg;
 const app = express();
 const router = express.Router();
+const DB_URL = process.env.DATABASE_URL;
 
 // CONNEXION A LA BDD
-const client = new Client(process.env.DATABASE_URL);
+const client = new Client(DB_URL);
 client.connect();
 
 app.use(express.json());
