@@ -4,6 +4,6 @@
     node_bundler="esbuild"
 [[redirects]]
   from = "/newsletter/*"
-  to = "/.netlify/functions/newsletter"
+  to = "/.netlify/functions/api"
   status = 200
   force = true
