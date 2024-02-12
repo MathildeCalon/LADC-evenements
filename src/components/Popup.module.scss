@@ -10,8 +10,13 @@
 };
 
 .box {
-    width: 40%;
+    width: 60%;
+    top: 20%;
+    right: auto;
     min-height: 200px;
+    max-height: 90%;
+    height: auto;
+    bottom: 20%;
     border: 1px solid var(--logo-blue);
     background-color: var(--main-background-color, 1);
     border-radius: 10px;
@@ -19,10 +24,15 @@
     overflow: auto;
 }
 
+.newsletterForm {
+    width: 80%;
+}
+
 .btnClose {
     cursor: pointer;
     position: fixed;
-    right: 30.5%;
+    top: 7%;
+    right: 25%;
     font-size: 1.5rem;
 }
 
