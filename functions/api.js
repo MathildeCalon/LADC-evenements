@@ -3,7 +3,6 @@ import pg from 'pg';
 import dotenv from 'dotenv';
 import serverless from 'serverless-http';
 
-
 dotenv.config();
 
 const { Client } = pg;
@@ -13,8 +12,6 @@ const router = express.Router();
 // CONNEXION A LA BDD
 const client = new Client(process.env.DATABASE_URL);
 client.connect();
-
-const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -50,7 +47,7 @@ router.post("/newsletter",
 router.post("/unsubscribe",
     async (req, res) => {
         try {
-            const { email } = req.body;
+            const { email } = req.body;
             const unsubscribeQuery = {
                 text: `UPDATE "newsletter" SET inscription='false' WHERE email=$1`,
                 values: [email]
