@@ -1,6 +1,8 @@
 import express from 'express';
 import pg from 'pg';
 import dotenv from 'dotenv';
+import serverless from 'serverless-http';
+
 
 dotenv.config();
 
@@ -66,7 +68,5 @@ router.post("/unsubscribe",
         res.redirect('https://ladc-evenements.fr/')
     })
 
-// === LANCEMENT DU SERVEUR === //
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+app.use('/.netlify/functions/api', router);
+module.exports.handler = serverless(app);
