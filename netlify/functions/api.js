@@ -1,7 +1,7 @@
 import express from 'express';
 import pg from 'pg';
 import dotenv from 'dotenv';
-import serverless from 'serverless-http';
+import serverless from 'serverless';
 
 dotenv.config();
 
