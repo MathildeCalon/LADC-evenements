@@ -1,7 +1,21 @@
 import styles from './Content.module.scss';
+import Popup from './Popup';
 import Articles from './Article';
+import React, { useState } from 'react';
+import logo from '/images/logo-banner.png';
 
 function Content() {
+    const [isOpen, setIsOpen] = useState(false);
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+    const [showMessage, setShowMessage] = useState(false)
+    const toggleDisplay = () => {
+        setTimeout(()=>{
+            setMessage(!showMessage);
+        })
+    }
+
     return (
         <div className='flex-fill container p-20'>
             <h1 className="my-100 d-flex justify-content-center">LADC ÉVÉNEMENTS : <br/>Votre Événement, Notre Engagement.</h1>
@@ -35,6 +49,25 @@ function Content() {
                     <li><i className="fa-solid fa-at mr-5"></i>ladcevenements@gmail.com</li>
                 </ul>
             </div>
+
+            <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>
+            NEWSLETTER
+            </div>
+
+            {isOpen && <Popup
+            handleClose={togglePopup}
+            content={<div className='d-flex flex-column justify-content-center align-items-center p-20'>
+                <img src={logo} alt="Logo de LADC Evenements"/>
+                <h3 className='m-10'>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
+                <form action="http://ladc-evenements.fr/newsletter" method="post" className='d-flex flex-column'>
+                    <label for="firstname" className='m-10'>Votre prénom</label>
+                    <input type="text" id="firstname" name="firstname" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$"/>
+                    <label for="email" className='m-10'>Votre adresse email</label>
+                    <input type="email" id="email" name="email"/>
+                    <button type='submit' id='validateBtn' className='btn btn-primary m-10' onClick={toggleDisplay}>S'INSCRIRE</button>
+                </form>
+            </div>}
+            />}
         </div>
     )
 }

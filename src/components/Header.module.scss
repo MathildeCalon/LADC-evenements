@@ -14,14 +14,8 @@ button {
 };
 
 // RESPONSIVE
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 960px) {
     .navLinks {
         display: none;
-    }
-    .header {
-        img {
-            display: flex;
-            margin: auto;
-        }
     }
 }
