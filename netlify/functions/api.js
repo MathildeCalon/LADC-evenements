@@ -10,7 +10,12 @@ const router = express.Router();
 const DB_URL = process.env.DATABASE_URL;
 
 // CONNEXION A LA BDD
-const client = new Client(DB_URL);
+const client = new Client({
+    connectionString: DB_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
+});
 client.connect();
 
 app.use(express.json());
