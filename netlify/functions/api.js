@@ -1,7 +1,6 @@
 import express from 'express';
 import pg from 'pg';
 import dotenv from 'dotenv';
-import serverless from 'serverless';
 
 dotenv.config();
 
@@ -66,4 +65,4 @@ router.post("/unsubscribe",
     })
 
 app.use('/.netlify/functions/api', router);
-module.exports.handler = new serverless(app);
+module.exports.handler = app;
