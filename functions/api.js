@@ -1,5 +1,4 @@
 import express from 'express';
-import cors from 'cors';
 import pg from 'pg';
 import dotenv from 'dotenv';
 
@@ -18,22 +17,11 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// === CORS === //
-// AUTORISE LA COMMUNICATION ENTRE LE FRONT ET LE BACK //
-app.use(
-    cors({
-      origin: 'https://localhost:5173/',
-      credentials: true,
-      methods: 'GET,PATCH,POST,DELETE',
-    })
-  );
-
 app.use(router);
 
 // === INSCRIPTION A LA NEWSLETTER === //
 router.post("/newsletter", 
     async (req, res)=>{
-
         try {
             // RECUPERATION DE L'ADRESSE MAIL
             const {firstname, email} = req.body;
@@ -56,6 +44,27 @@ router.post("/newsletter",
         res.redirect('https://ladc-evenements.fr/');
     }
 );
+
+router.post("/unsubscribe",
+    async (req, res) => {
+        try {
+            const { email } = req.body;
+            const unsubscribeQuery = {
+                text: `UPDATE "newsletter" SET inscription='false' WHERE email=$1`,
+                values: [email]
+            };
+            const response = await client.query (unsubscribeQuery);
+
+            if(!response.rowCount){
+                console.log(`Erreur lors de la désinscription`);
+            } else {
+                console.log(`Désinscription effectuée.`);
+            }
+        } catch (error) {
+            console.error(error);
+        };
+        res.redirect('https://ladc-evenements.fr/')
+    })
 
 // === LANCEMENT DU SERVEUR === //
 app.listen(PORT, () => {

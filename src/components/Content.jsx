@@ -59,7 +59,7 @@ function Content() {
             content={<div className='d-flex flex-column justify-content-center align-items-center p-20'>
                 <img src={logo} alt="Logo de LADC Evenements"/>
                 <h3 className='m-10'>Abonnez-vous à notre newsletter et ne manquez aucune information :</h3>
-                <form action="http://localhost:3000/newsletter" method="post" className='d-flex flex-column'>
+                <form action="http://ladc-evenements.fr/newsletter" method="post" className='d-flex flex-column'>
                     <label for="firstname" className='m-10'>Votre prénom</label>
                     <input type="text" id="firstname" name="firstname" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$"/>
                     <label for="email" className='m-10'>Votre adresse email</label>
