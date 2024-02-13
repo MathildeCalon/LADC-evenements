@@ -39,9 +39,8 @@ h1 {
 .contact {
     border: solid var(--text-color);
     border-radius: 10px;
-    li {
-        font-size: 1.4rem;
-    }
+    width: 50%;
+    margin: auto;
 }
 
 .sideBar {
@@ -87,15 +86,15 @@ h1 {
             margin-bottom: 20px;
         };
     };
-    .contact {
-        li {
-            font-size: 1.05rem;
-        }
-    }
+
     .sideBar {
         top: 8%;
         right: 15px;
         writing-mode: horizontal-tb;
         border-radius: 10px 10px 10px 10px;
+    };
+
+    .contact {
+        width: 90%;
     }
 };
