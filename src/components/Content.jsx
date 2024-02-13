@@ -2,6 +2,7 @@ import styles from './Content.module.scss';
 import Popup from './Popup';
 import Articles from './Article';
 import React, { useState, useEffect } from 'react';
+import HubspotForm from 'react-hubspot-form';
 
 
 function Content() {
@@ -62,6 +63,12 @@ function Content() {
                     <p>Pour toute demande de réservation ou pour toute demande de renseignement, contactez Anthony Coucke :</p>
                     <li className="my-15"><i className="fa-solid fa-phone mr-5"></i>07.78.24.59.38</li>
                     <li><i className="fa-solid fa-at mr-5"></i>ladcevenements@gmail.com</li>
+                    <p className="mt-50">Contactez-nous directement un message via le formulaire :</p>
+                    <HubspotForm
+                        portalId="143994085"
+                        formId="412785c6-3ab7-4a26-a788-ccda2f4f13a8"
+                        loading={<div>Chargement...</div>}
+                    />
                 </ul>
             </div>
 
