@@ -1,14 +1,35 @@
 import styles from './Content.module.scss';
 import Popup from './Popup';
 import Articles from './Article';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function Content() {
+    // POUR OUVRIR LA POPUP NEWSLETTER
     const [isOpen, setIsOpen] = useState(false);
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
+
+    // POUR OUVRIR LA POPUP NEWSLETTER UNE SEULE FOIS AU SCROLL
+    const [hasPopped, setHasPopped] = useState(false);
+
+    const oncePop = () => {
+        if(!hasPopped){
+            const currentScroll = window.scrollY;
+            if(currentScroll>600){
+                togglePopup();
+                setHasPopped(true);
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', oncePop);
+        return () => {
+            window.removeEventListener('scroll', oncePop);
+        };
+    }, [hasPopped])
 
     return (
         <div className='flex-fill container p-20'>
