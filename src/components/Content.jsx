@@ -57,19 +57,14 @@ function Content() {
                 </div>
             </div>
 
-            <div id="contact" className={`${styles.contact} flex-fill mb-50 p-20`}>
+            <div id="contact" className={`${styles.contact} mb-50 p-20`}>
                 <h2>Contactez nous !</h2>
-                <ul>
-                    <p>Pour toute demande de réservation ou pour toute demande de renseignement, contactez Anthony Coucke :</p>
-                    <li className="my-15"><i className="fa-solid fa-phone mr-5"></i>07.78.24.59.38</li>
-                    <li><i className="fa-solid fa-at mr-5"></i>ladcevenements@gmail.com</li>
-                    <p className="mt-50">Contactez-nous directement un message via le formulaire :</p>
+                    <p className="mt-50">Envoyez-nous directement un message via le formulaire :</p>
                     <HubspotForm
                         portalId="143994085"
                         formId="412785c6-3ab7-4a26-a788-ccda2f4f13a8"
                         loading={<div>Chargement...</div>}
                     />
-                </ul>
             </div>
 
             <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>
