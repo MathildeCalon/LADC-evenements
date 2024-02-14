@@ -1,7 +1,15 @@
 import styles from './Header.module.scss';
 import logo from '/images/logo-banner.png';
+import { useState } from 'react';
+import Cart from './Cart'
 
 function Header (){
+    // POUR OUVRIR LE PANIER
+    const [cartIsOpen, setCartIsOpen] = useState(false);
+    const toggleCartPopUp = () => {
+        setCartIsOpen(!cartIsOpen);
+    };
+
     return (
         <header className={`${styles.header} d-flex flex-row align-items-center`}>
             <div className="flex-fill">
@@ -27,8 +35,11 @@ function Header (){
                         Contact
                         </button>
                     </a>
-                    <a href='/cart'><i className="fa-solid fa-cart-shopping mr-15"></i></a>
+                    <i className="fa-solid fa-cart-shopping mr-15" onClick={toggleCartPopUp}/>
                 </ul>
+                {cartIsOpen && <Cart
+            handleClose={toggleCartPopUp}
+            />}
             </nav>
             
         </header>

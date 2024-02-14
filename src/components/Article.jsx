@@ -1,13 +1,14 @@
 import styles from './Article.module.scss';
 import jsonData from '../assets/articles.json';
 
-function Articles(){
+
+export const currentCart = [];
+export default function Articles (){
     // POUR AJOUTER DES ARTICLES AU PANIER
-    const cart = [];
 
     const addToCart = (article) => {
-        cart.push(article);
-        console.log(cart);
+        currentCart.push(article);
+        console.log(currentCart);
     }
 
 
@@ -29,5 +30,3 @@ function Articles(){
         ))
     )
 };
-
-export default Articles;
