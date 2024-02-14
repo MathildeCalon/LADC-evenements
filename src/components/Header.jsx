@@ -27,6 +27,7 @@ function Header (){
                         Contact
                         </button>
                     </a>
+                    <a href='/cart'><i className="fa-solid fa-cart-shopping mr-15"></i></a>
                 </ul>
             </nav>
             
