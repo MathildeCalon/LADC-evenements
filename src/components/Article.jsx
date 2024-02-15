@@ -2,16 +2,8 @@ import styles from './Article.module.scss';
 import jsonData from '../assets/articles.json';
 
 
-export const currentCart = [];
-export default function Articles (){
+export default function Articles ({addToCart}){
     // POUR AJOUTER DES ARTICLES AU PANIER
-
-    const addToCart = (article) => {
-        currentCart.push(article);
-        console.log(currentCart);
-    }
-
-
     return(
         jsonData.map((article) => (
             <div className={styles.article} key={article.id}>

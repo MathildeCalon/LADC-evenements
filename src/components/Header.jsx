@@ -3,7 +3,7 @@ import logo from '/images/logo-banner.png';
 import { useState } from 'react';
 import Cart from './Cart'
 
-function Header (){
+function Header (currentCart){
     // POUR OUVRIR LE PANIER
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const toggleCartPopUp = () => {
@@ -38,9 +38,10 @@ function Header (){
                     <i className="fa-solid fa-cart-shopping mr-15" onClick={toggleCartPopUp}/>
                 </ul>
                 {cartIsOpen && <Cart
-            handleClose={toggleCartPopUp}
-            />}
-            </nav>
+                currentCart={currentCart}
+                handleClose={toggleCartPopUp}
+                />}
+                </nav>
             
         </header>
     )

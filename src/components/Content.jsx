@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
 
 
-function Content() {
+function Content({addToCart}) {
     // POUR OUVRIR LA POPUP NEWSLETTER
     const [isOpen, setIsOpen] = useState(false);
     const togglePopup = () => {
@@ -52,7 +52,7 @@ function Content() {
                 <h2 id='liste-articles'>Nos articles</h2>
                 <div className={`card p-20 ${styles.contentCard}`}>
                     <div className={styles.grid}>
-                        <Articles />
+                        <Articles addToCart={addToCart}/>
                     </div>
                 </div>
             </div>
