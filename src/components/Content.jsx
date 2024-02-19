@@ -5,16 +5,9 @@ import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
 
 
-function Content({addToCart}) {
-    // POUR OUVRIR LA POPUP NEWSLETTER
-    const [isOpen, setIsOpen] = useState(false);
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    };
-
+function Content({addToCart, togglePopup, newsIsOpen}) {
     // POUR OUVRIR LA POPUP NEWSLETTER UNE SEULE FOIS AU SCROLL
     const [hasPopped, setHasPopped] = useState(false);
-
     const oncePop = () => {
         if(!hasPopped){
             const currentScroll = window.scrollY;
@@ -67,11 +60,7 @@ function Content({addToCart}) {
                     />
             </div>
 
-            <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>
-            NEWSLETTER
-            </div>
-
-            {isOpen && <Popup
+            {newsIsOpen && <Popup
             handleClose={togglePopup}
             />}
         </div>

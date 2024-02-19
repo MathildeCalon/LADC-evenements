@@ -1,9 +1,9 @@
 import styles from './Header.module.scss';
 import logo from '/images/logo-banner.png';
 import { useState } from 'react';
-import Cart from './Cart'
+import Cart from './Cart';
 
-function Header ({currentCart, removeFromCart}){
+function Header ({currentCart, removeFromCart, togglePopup}){
     // POUR OUVRIR LE PANIER
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const toggleCartPopUp = () => {
@@ -24,12 +24,18 @@ function Header ({currentCart, removeFromCart}){
             </div>
 
             <nav>
-                <ul className={styles.navLinks}>
+                <div className={`${styles.navBurger} mr-15`} onClick={toggleMenu}>
+                <i className="fa-solid fa-bars"/>
+                </div>
+                <ul className={`${styles.navLinks} ${isMenuOpen ? 'show' : ''}`}>
                     <a href="#presentation">
                         <button className='mr-15 btn btn-primary'>
                         Présentation
                         </button>
                     </a>
+                    <button className='mr-15 btn btn-primary' onClick={togglePopup}>
+                    Newsletter
+                    </button>
                     <a href='#liste-articles'>
                         <button className='mr-15 btn btn-primary'>
                         Liste des articles
