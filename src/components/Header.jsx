@@ -10,6 +10,11 @@ function Header ({currentCart, removeFromCart}){
         setCartIsOpen(!cartIsOpen);
     };
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
+
     return (
         <header className={`${styles.header} d-flex flex-row align-items-center`}>
             <div className="flex-fill">
@@ -35,7 +40,7 @@ function Header ({currentCart, removeFromCart}){
                         Contact
                         </button>
                     </a>
-                    <i className="fa-solid fa-cart-shopping mr-15" onClick={toggleCartPopUp}/>
+                    <button className={`${styles.cart} btn btn-primary mr-15`} onClick={toggleCartPopUp}><i className="fa-solid fa-cart-shopping mr-5"/>Mon panier</button>
                 </ul>
                 {cartIsOpen && <Cart
                 currentCart={currentCart}
