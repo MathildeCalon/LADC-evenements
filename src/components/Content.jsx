@@ -1,14 +1,36 @@
 import styles from './Content.module.scss';
 import Popup from './Popup';
 import Articles from './Article';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import HubspotForm from 'react-hubspot-form';
 
 
 function Content() {
+    // POUR OUVRIR LA POPUP NEWSLETTER
     const [isOpen, setIsOpen] = useState(false);
     const togglePopup = () => {
         setIsOpen(!isOpen);
     };
+
+    // POUR OUVRIR LA POPUP NEWSLETTER UNE SEULE FOIS AU SCROLL
+    const [hasPopped, setHasPopped] = useState(false);
+
+    const oncePop = () => {
+        if(!hasPopped){
+            const currentScroll = window.scrollY;
+            if(currentScroll>600){
+                togglePopup();
+                setHasPopped(true);
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', oncePop);
+        return () => {
+            window.removeEventListener('scroll', oncePop);
+        };
+    }, [hasPopped])
 
     return (
         <div className='flex-fill container p-20'>
@@ -35,13 +57,14 @@ function Content() {
                 </div>
             </div>
 
-            <div id="contact" className={`${styles.contact} flex-fill mb-50 p-20`}>
+            <div id="contact" className={`${styles.contact} mb-50 p-20`}>
                 <h2>Contactez nous !</h2>
-                <ul>
-                    <p>Pour toute demande de réservation ou pour toute demande de renseignement, contactez Anthony Coucke :</p>
-                    <li className="my-15"><i className="fa-solid fa-phone mr-5"></i>07.78.24.59.38</li>
-                    <li><i className="fa-solid fa-at mr-5"></i>ladcevenements@gmail.com</li>
-                </ul>
+                    <p className="mt-50">Envoyez-nous directement un message via le formulaire :</p>
+                    <HubspotForm
+                        portalId="143994085"
+                        formId="412785c6-3ab7-4a26-a788-ccda2f4f13a8"
+                        loading={<div>Chargement...</div>}
+                    />
             </div>
 
             <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>

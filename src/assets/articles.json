@@ -96,5 +96,12 @@
     "description": "Pour 10 personnes. Inclus : maïs, sachets, huile",
     "prix": 8,
     "photo": "popcorn.png"
+    },
+    {
+    "id":"15",
+    "titre": "Machine à Barbe à Papa",
+    "description": "",
+    "prix": 40,
+    "photo": "barbe_a_papa.png"
     }
 ]
