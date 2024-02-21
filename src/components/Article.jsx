@@ -3,7 +3,6 @@ import jsonData from '../assets/articles.json';
 
 
 export default function Articles ({addToCart}){
-    // POUR AJOUTER DES ARTICLES AU PANIER
     return(
         jsonData.map((article) => (
             <div className={styles.article} key={article.id}>

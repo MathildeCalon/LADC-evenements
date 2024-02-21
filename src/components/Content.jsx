@@ -1,5 +1,5 @@
 import styles from './Content.module.scss';
-import Popup from './Popup';
+
 import Articles from './Article';
 import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
@@ -59,10 +59,6 @@ function Content({addToCart, togglePopup, newsIsOpen}) {
                         loading={<div>Chargement...</div>}
                     />
             </div>
-
-            {newsIsOpen && <Popup
-            handleClose={togglePopup}
-            />}
         </div>
     )
 }

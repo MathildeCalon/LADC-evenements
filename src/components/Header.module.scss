@@ -26,7 +26,7 @@ button {
         background-color: var(--text-color);
         border: var(--logo-blue) 3px solid;
         border-radius: 20px;
-        margin: 75px 10px 0 0;
+        margin: 100px 10px 0 0;
         button {
             width: 100%;
             margin: 5px 15px 5px 0px;
@@ -34,6 +34,6 @@ button {
         }
     }
     .navBurger {
-        display: flex;
+        display: block;
     }
 }

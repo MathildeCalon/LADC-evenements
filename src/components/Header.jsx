@@ -1,19 +1,42 @@
 import styles from './Header.module.scss';
 import logo from '/images/logo-banner.png';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Cart from './Cart';
+import Popup from './Popup';
 
-function Header ({currentCart, removeFromCart, togglePopup}){
+function Header ({currentCart, removeFromCart}){
     // POUR OUVRIR LE PANIER
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const toggleCartPopUp = () => {
         setCartIsOpen(!cartIsOpen);
+        if(isMenuOpen){
+            toggleMenu();
+        }
     };
 
+  // POUR OUVRIR LA POPUP NEWSLETTER
+  const [newsIsOpen, setNewsIsOpen] = useState(false);
+  const togglePopup = () => {
+      setNewsIsOpen(!newsIsOpen);
+  };
+
+    // POUR OUVRIR LE MENU RESPONSIVE
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
+
+    // POUR FERMER LE MENU RESPONSIVE EN CLIQUANT A L'EXTERIEUR
+    let menuRef = useRef();
+
+    useEffect(()=> {
+        let handler = (event)=> {
+            if(!menuRef.current.contains(event.target)){
+                setIsMenuOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handler);
+    })
 
     return (
         <header className={`${styles.header} d-flex flex-row align-items-center`}>
@@ -25,10 +48,10 @@ function Header ({currentCart, removeFromCart, togglePopup}){
 
             <nav>
                 <div className={`${styles.navBurger} mr-15`} onClick={toggleMenu}>
-                <i className="fa-solid fa-bars"/>
+                    <i className="fa-solid fa-bars"/>
                 </div>
-                <ul className={`${styles.navLinks} ${isMenuOpen ? 'show' : ''}`}>
-                    <a href="#presentation">
+                <ul className={`${styles.navLinks} ${isMenuOpen ? 'show' : ''}`} ref={menuRef}>
+                    <a href="#presentation" onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Présentation
                         </button>
@@ -36,12 +59,12 @@ function Header ({currentCart, removeFromCart, togglePopup}){
                     <button className='mr-15 btn btn-primary' onClick={togglePopup}>
                     Newsletter
                     </button>
-                    <a href='#liste-articles'>
+                    <a href='#liste-articles' onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Liste des articles
                         </button>
                     </a>
-                    <a href='#contact'>
+                    <a href='#contact'  onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Contact
                         </button>
@@ -55,6 +78,9 @@ function Header ({currentCart, removeFromCart, togglePopup}){
                 />}
                 </nav>
             
+                {newsIsOpen && <Popup
+            handleClose={togglePopup}
+            />}
         </header>
     )
 }

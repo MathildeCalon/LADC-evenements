@@ -18,16 +18,10 @@ function App() {
     return currentCart;
   };
 
-  // POUR OUVRIR LA POPUP NEWSLETTER
-  const [newsIsOpen, setNewsIsOpen] = useState(false);
-  const togglePopup = () => {
-      setNewsIsOpen(!newsIsOpen);
-  };
-
   return (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header currentCart={currentCart} removeFromCart={removeFromCart}/>
-      <Content addToCart={addToCart} togglePopup={togglePopup} newsIsOpen={newsIsOpen}/>
+      <Content addToCart={addToCart}/>
       <Footer />
     </div>
   )
