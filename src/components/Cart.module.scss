@@ -18,7 +18,7 @@
 };
 
 .box {
-    background-color: red;
+    width: 70%;
     border: 1px solid var(--logo-blue);
     border-radius: 10px;
     background-color: var(--main-background-color, 1);
@@ -28,4 +28,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.totalSum {
+    font-weight: bold;
+}
+
+.startDate {
+    width: 50%;
 }

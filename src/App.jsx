@@ -5,9 +5,8 @@ import styles from './App.module.scss';
 import { useState } from 'react';
 
 function App() {
-  // PANIER
-  const [currentCart, setCurrentCart] = useState([]);
   // AJOUT AU PANIER
+  const [currentCart, setCurrentCart] = useState([]);
   const addToCart = (article) => {
     setCurrentCart([...currentCart, article]);
   };
