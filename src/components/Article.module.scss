@@ -27,3 +27,13 @@
     font-size: 1rem;
     text-align: center;
 }
+
+.addCart{
+    width: 90%;
+    border: solid 1px var(--header-footer-color);
+    border-radius: 20px;
+    color: white;
+    background-color: var(--logo-blue);
+    height: 60px;
+    cursor: pointer;
+};
