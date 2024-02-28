@@ -4,7 +4,7 @@
     top: 2%;
     right: 3%;
     font-size: 1.5rem;
-}
+};
 
 .cartPopUp {
     display: grid;
@@ -28,12 +28,49 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+};
+
+.article{
+    border-radius: 20px;
+    background-color: var(--header-footer-color);
+    margin: 10px;
+    width: 60%;
+    height: 150px;
+}
+
+.articleResume{
+    justify-content: space-between;
+}
+.imageContainer {
+    width: 180px;
+    justify-content: center;
+    img {
+        height: 120px;
+        width: auto;
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+.articleTitle {
+    font-size: 0.8rem;
 }
 
 .totalSum {
     font-weight: bold;
 }
 
-.startDate {
+.startDate{
     width: 50%;
+}
+
+.noArticle {
+    background-color: var(--header-footer-color);
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    .startDate{
+        width: 60%;
+    }
 }
