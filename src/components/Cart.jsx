@@ -6,20 +6,22 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
     const totalSum = currentCart.reduce((acc, article) => acc + article.prix, 0);
     
     return (
-        <form>
+        <form action="http://localhost:3000/contact" method="post">
         <div className={styles.cartPopUp}>
             <div className={`${styles.box}`}>
                 <i className={`fa-regular fa-circle-xmark ${styles.btnClose}`} onClick={handleClose}></i>
                 <div className={`${styles.cartContainer} d-flex flex-column justify-content-center align-items-center p-20`}>
                     <img src={logo} alt="Logo de LADC Evenements"/>
 
-                        <h3>1. Vos articles souhaités :</h3>
+                        <h3>1. Vos articles souhaités :</h3>                       
 
                         {currentCart.length === 0 && (
                         <p className={`${styles.noArticle} p-20`}>Aucun article dans votre panier.</p>)}
 
                         {currentCart.map((article) => (
+
                             <div className={styles.article} key={article.id}>
+                                <input type="hidden" name="articles" value={article.titre}/>
                                 <div className={`${styles.articleResume} d-flex align-items-center`}>
                                 {article.photo &&
                                     <div className={`${styles.imageContainer} d-flex`}>
@@ -33,15 +35,16 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                                 </div>
                             </div>
                         ))}
-                        <p className={styles.totalSum}>Montal total : {totalSum}€</p>
+                        <input type="hidden" name="totalAmount" value={totalSum}/>
+                        <p className={styles.totalSum} data-totalAmount>Montal total : {totalSum}€</p>
 
 
                     {currentCart.length > 0 && (
                         <>
                     <div className='d-flex flex-column my-15'>
                         <h3 className='mb-10'>2. Votre date :</h3>
-                        <label for="start">Réservation souhaitée :</label>
-                        <input type="date" id="start" name="booking-start" className={styles.startDate} required/>
+                        <label for="startDate">Réservation souhaitée :</label>
+                        <input type="date" id="startDate" name="booking-start" className={styles.startDate} required/>
                     </div>
 
                     <div className={styles.contactDetails}>

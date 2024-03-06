@@ -77,27 +77,6 @@
     "photo": "arcade.png"
     },
     {
-    "id":"12",
-    "titre": "Bonbons",
-    "description": "Petit sachet",
-    "prix": 1,
-    "photo": "bonbons_petit.png"
-    },
-    {
-    "id":"13",
-    "titre": "Bonbons",
-    "description": "Grand sachet",
-    "prix": 2,
-    "photo": "bonbons_grand.png"
-    },
-    {
-    "id":"14",
-    "titre": "Kit Popcorn",
-    "description": "Pour 10 personnes. Inclus : maïs, sachets, huile",
-    "prix": 8,
-    "photo": "popcorn.png"
-    },
-    {
     "id":"15",
     "titre": "Machine à Barbe à Papa",
     "description": "",
