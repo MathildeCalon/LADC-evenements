@@ -1,9 +1,9 @@
 import styles from './Cart.module.scss';
 import logo from '/images/logo-banner.png';
+import 'animate.css';
 
 const Cart = ({currentCart, handleClose, removeFromCart}) => {
     const totalSum = currentCart.reduce((acc, article) => acc + article.prix, 0);
-    console.log(totalSum);
     
     return (
         <form>
