@@ -9,31 +9,56 @@ let transporter = nodemailer.createTransport({
     secure: false,
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        pass: process.env.EMAIL_PASSWORD
     }
 });
 
-async function sendContactMails(formData) {
-    const { prenom, bookingStart, articles, totalSum, email, telephone } = formData;
-    try {
-        const contactMail = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
-            subject: 'Nouveau message de contact',
-            text: `Bonjour,
-            Vous avez reçu une nouvelle demande de devis :
-            Prénom : ${prenom}
-            Date souhaitée : ${bookingStart}
-            Articles : ${articles}
-            Montant total : ${totalSum}
-            Email : ${email}
-            Téléphone : ${telephone}
-            `
-        };
-        const result = await transporter.sendMail(contactMail);
-     } catch(error) {
-            console.error(error);
+const sendMails = {
+    async sendContactMails(formData) {
+        const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        try {
+            const contactMail = {
+                from: 'contact@ladc-evenements.fr',
+                to: 'contact@ladc-evenements.fr',
+                subject: 'Nouveau message de contact',
+                text: `Bonjour,
+                Vous avez reçu une nouvelle demande de devis :
+                Prénom : ${prenom}
+                Email : ${email}
+                Téléphone : ${telephone}
+                Date souhaitée : ${bookingStart}
+                Articles : ${articles}
+                Montant total : ${totalAmount}€
+                `
+            };
+            await transporter.sendMail(contactMail);
+        } catch(error) {
+                console.error(error);
+        }
+    },
+
+    async sendConfirmationMail(formData) {
+        const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        try {
+            const confirmationMail = {
+                from: 'contact@ladc-evenements.fr',
+                to: email,
+                subject: 'Votre demande de devis',
+                text: `Bonjour,
+                Merci pour votre demande de devis. Voici un récapitulatif:
+                Prénom : ${prenom}
+                Email : ${email}
+                Téléphone : ${telephone}
+                Date souhaitée : ${bookingStart}
+                Articles : ${articles}
+                Montant total : ${totalAmount}€
+                `
+            };
+            await transporter.sendMail(confirmationMail);
+        } catch(error) {
+                console.error(error);
+        }
     }
 };
 
-export default sendContactMails;
+export default sendMails;

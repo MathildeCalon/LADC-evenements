@@ -44,7 +44,7 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                     <div className='d-flex flex-column my-15'>
                         <h3 className='mb-10'>2. Votre date :</h3>
                         <label for="startDate">Réservation souhaitée :</label>
-                        <input type="date" id="startDate" name="booking-start" className={styles.startDate} required/>
+                        <input type="date" id="startDate" name="bookingStart" className={styles.startDate} required/>
                     </div>
 
                     <div className={styles.contactDetails}>
