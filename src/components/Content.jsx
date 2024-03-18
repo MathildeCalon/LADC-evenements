@@ -1,37 +1,10 @@
 import styles from './Content.module.scss';
-import Popup from './Popup';
 import Articles from './Article';
 import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
+import Popup from './Popup';
 
-
-function Content() {
-    // POUR OUVRIR LA POPUP NEWSLETTER
-    const [isOpen, setIsOpen] = useState(false);
-    const togglePopup = () => {
-        setIsOpen(!isOpen);
-    };
-
-    // POUR OUVRIR LA POPUP NEWSLETTER UNE SEULE FOIS AU SCROLL
-    const [hasPopped, setHasPopped] = useState(false);
-
-    const oncePop = () => {
-        if(!hasPopped){
-            const currentScroll = window.scrollY;
-            if(currentScroll>600){
-                togglePopup();
-                setHasPopped(true);
-            }
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', oncePop);
-        return () => {
-            window.removeEventListener('scroll', oncePop);
-        };
-    }, [hasPopped])
-
+function Content({addToCart, togglePopup, newsIsOpen}) {
     return (
         <div className='flex-fill container p-20'>
             <h1 className="my-100 d-flex justify-content-center">LADC ÉVÉNEMENTS : <br/>Votre Événement, Notre Engagement.</h1>
@@ -52,7 +25,7 @@ function Content() {
                 <h2 id='liste-articles'>Nos articles</h2>
                 <div className={`card p-20 ${styles.contentCard}`}>
                     <div className={styles.grid}>
-                        <Articles />
+                        <Articles addToCart={addToCart}/>
                     </div>
                 </div>
             </div>
@@ -71,7 +44,7 @@ function Content() {
             NEWSLETTER
             </div>
 
-            {isOpen && <Popup
+            {newsIsOpen && <Popup
             handleClose={togglePopup}
             />}
         </div>

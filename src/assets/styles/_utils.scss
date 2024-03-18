@@ -21,6 +21,9 @@
 .p-20 {
     padding: 20px;
 }
+.py-10{
+    padding: 10px 0px 10px 0px;
+}
 
 // MARGIN
 .m-10 {
@@ -49,6 +52,9 @@
 }
 
 // MARGIN BOTTOM
+.mb-10{
+    margin-bottom: 10px;
+}
 .mb-20 {
     margin-bottom: 20px;
 }
@@ -66,4 +72,9 @@
 .my-15 {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+// RESPONSIVE
+.show {
+    display: flex;
 }
