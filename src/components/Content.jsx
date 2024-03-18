@@ -1,10 +1,8 @@
 import styles from './Content.module.scss';
-
 import Articles from './Article';
 import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
 import Popup from './Popup';
-
 
 function Content({addToCart, togglePopup, newsIsOpen}) {
     return (

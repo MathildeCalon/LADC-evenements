@@ -16,7 +16,7 @@ export default function Articles ({addToCart}){
                         <p className={styles.description}>{article.description}</p>
                     }
                 </div>
-                <div className={`${styles.addCart} d-flex align-items-center justify-content-center py-10 my-15`} onClick={()=>{addToCart(article)}}>
+                <div className={`${styles.addCart} d-flex align-items-center justify-content-center py-10 my-15`} onClick={()=>{addToCart(article)}} id={`btn${article.id}`}>
                     <i className='fa-solid fa-cart-plus mr-15'/>
                     <p>Ajouter au panier - {article.prix}€</p>  
                 </div>

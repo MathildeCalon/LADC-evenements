@@ -18,6 +18,13 @@
     height: 50px;
 }
 
+.clicked {
+    background-color: var(--header-footer-color);
+    color: var(--logo-blue);
+    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
 .card {
     border-radius: 20px;
     background-color: white;
