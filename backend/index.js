@@ -20,9 +20,9 @@ router.post('/contact', async (req, res) => {
     try{
         await sendMails.sendContactMails(formData);
         await sendMails.sendConfirmationMail(formData);
-        res.status(200).send('Form data received');
+        res.redirect('https://ladc-evenements.fr');
     } catch(error) {
-        res.status(500).send('An error occured while sending the form data');
+        res.status(500).send('Une erreur est survenue. Veuillez réessayer plus tard.');
     }
 });
 

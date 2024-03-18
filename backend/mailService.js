@@ -16,19 +16,23 @@ let transporter = nodemailer.createTransport({
 const sendMails = {
     async sendContactMails(formData) {
         const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        const startDate = new Date(bookingStart).toLocaleDateString();
         try {
             const contactMail = {
                 from: 'contact@ladc-evenements.fr',
                 to: 'contact@ladc-evenements.fr',
                 subject: 'Nouveau message de contact',
                 text: `Bonjour,
+
                 Vous avez reçu une nouvelle demande de devis :
                 Prénom : ${prenom}
                 Email : ${email}
                 Téléphone : ${telephone}
-                Date souhaitée : ${bookingStart}
+                Date souhaitée : ${startDate}
                 Articles : ${articles}
                 Montant total : ${totalAmount}€
+                
+                Merci de contacter cette personne rapidement.
                 `
             };
             await transporter.sendMail(contactMail);
@@ -39,19 +43,23 @@ const sendMails = {
 
     async sendConfirmationMail(formData) {
         const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        const startDate = new Date(bookingStart).toLocaleDateString();
         try {
             const confirmationMail = {
                 from: 'contact@ladc-evenements.fr',
                 to: email,
                 subject: 'Votre demande de devis',
                 text: `Bonjour,
+
                 Merci pour votre demande de devis. Voici un récapitulatif:
                 Prénom : ${prenom}
                 Email : ${email}
                 Téléphone : ${telephone}
-                Date souhaitée : ${bookingStart}
+                Date souhaitée : ${startDate}
                 Articles : ${articles}
                 Montant total : ${totalAmount}€
+
+                Nous prendrons rapidement contact avec vous à ce sujet.
                 `
             };
             await transporter.sendMail(confirmationMail);

@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Cart from './Cart';
 import Popup from './Popup';
 
-function Header ({currentCart, removeFromCart}){
+function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
     // POUR OUVRIR LE PANIER
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const toggleCartPopUp = () => {
@@ -13,12 +13,6 @@ function Header ({currentCart, removeFromCart}){
             toggleMenu();
         }
     };
-
-  // POUR OUVRIR LA POPUP NEWSLETTER
-  const [newsIsOpen, setNewsIsOpen] = useState(false);
-  const togglePopup = () => {
-      setNewsIsOpen(!newsIsOpen);
-  };
 
     // POUR OUVRIR LE MENU RESPONSIVE
     const [isMenuOpen, setIsMenuOpen] = useState(false);
