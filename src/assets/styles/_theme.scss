@@ -5,7 +5,7 @@
     transition: 0.2s opacity;
     &:hover{
         opacity: 0.8;
-    }
+    };
 }
 
 .btn-primary {
@@ -19,10 +19,18 @@
 }
 
 .clicked {
-    background-color: var(--header-footer-color);
-    color: var(--logo-blue);
-    transition: background-color 0.5s ease;
-    transition: color 0.5s ease;
+    background: linear-gradient(to right, var(--logo-blue), #4b0082, #ee82ee, #ff0000, #ffa500, #ffff00, #008000, var(--logo-blue));
+    animation: scrollColors 3s linear infinite;
+    background-size: 200% auto;
+};
+
+@keyframes scrollColors {
+    0% {
+        background-position: 0 0; 
+    }
+    100% {
+        background-position: -100% 0; 
+    }
 }
 
 .card {

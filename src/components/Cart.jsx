@@ -10,9 +10,10 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
         <div className={styles.cartPopUp}>
             <div className={`${styles.box}`}>
                 <i className={`fa-regular fa-circle-xmark ${styles.btnClose}`} onClick={handleClose}></i>
-                <div className={`${styles.cartContainer} d-flex flex-column justify-content-center align-items-center p-20`}>
+                <div className={`d-flex flex-column justify-content-center align-items-center p-20`}>
                     <img src={logo} alt="Logo de LADC Evenements"/>
 
+                    <div className={`${styles.cartContainer} d-flex flex-column justify-content-center align-items-center`}>                
                         <h3>1. Vos articles souhaités :</h3>                       
 
                         {currentCart.length === 0 && (
@@ -64,6 +65,7 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                     )}
                 </>
                 )}
+                </div>
                 </div>
             </div>
         </div>

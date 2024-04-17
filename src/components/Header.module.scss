@@ -6,7 +6,8 @@
     img {
         width: 150px;
         padding: 2px;
-    }
+    };
+    z-index: 100;
 };
 
 .cart {
@@ -36,7 +37,7 @@ button {
     .navLinks{
         display: none;
         flex-direction: column;
-        z-index: 1;
+        z-index: 100;
         background-color: var(--text-color);
         border: var(--logo-blue) 3px solid;
         border-radius: 20px;

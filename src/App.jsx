@@ -22,7 +22,7 @@ function App() {
     clickedBtn.classList.add('clicked');
     setTimeout(() => {
       clickedBtn.classList.remove('clicked');
-    }, 1000);
+    }, 3000);
   };
   // SUPPRIMER DU PANIER  
   const removeFromCart = (articleToRemove) => {
