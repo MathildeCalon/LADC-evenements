@@ -38,6 +38,17 @@
     cursor: pointer;
 };
 
+
+@media screen and (min-width: 961px) {
+    .article:hover {
+        transform: scale(1.1);
+        transition: 0.5s transform;
+    }
+    .addCart:hover {
+        font-weight: bold;
+    };
+};
+
 @media screen and (max-width: 960px) {
     .addCart{
         i {

@@ -8,6 +8,11 @@ function Content({addToCart, togglePopup, newsIsOpen}) {
     return (
         <div className='flex-fill container p-20'>
             <h1 className="my-100 d-flex justify-content-center">LADC ÉVÉNEMENTS : <br/>Votre Événement, Notre Engagement.</h1>
+
+            <div className={`${styles.banderole} mb-50`}>
+                <img src="/images/bandeau15.png" alt="Bandeau promotionnel"/>
+            </div>
+
             <h2 id="presentation" className="d-flex">Bienvenue chez LADC ÉVÉNEMENTS.</h2>
             <div className={`${styles.presentation} d-flex flew-column flex-fill mb-20`}>
                 <div className={`${styles.textPresentation} m-10 flex-column`}>
