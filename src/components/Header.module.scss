@@ -7,6 +7,20 @@
         width: 150px;
         padding: 2px;
     }
+};
+
+.cart {
+    flex-wrap: wrap;
+}
+
+.cartLength {
+    background-color: var(--main-background-color);
+    display: inline-flex;
+    color: var(--text-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 button {
