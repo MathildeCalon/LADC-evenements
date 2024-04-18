@@ -6,16 +6,20 @@ import { useState } from 'react';
 import 'animate.css';
 
 function App() {
-  // AJOUT AU PANIER
   const [currentCart, setCurrentCart] = useState([]);
+
+  // AJOUT AU PANIER
   const addToCart = (article) => {
-    // VERIFICATION DE LA PRESENCE DE L'ARTICLE DANS LE PANIER
-    const check = currentCart.find((el) => el.id === article.id);
-    if (check) {
-      return;
+    const check = currentCart.find((item) => item.id === article.id);
+    if(!check){
+    if(article.quantité_max > 1){
+      const quantity = document.getElementById(`quantity-${article.id}`);
+      article.quantity = quantity ? quantity.value : 1;
+      article.prix = article.prix * article.quantity;
     } else {
+      article.quantity = 1;
+    }
       setCurrentCart([...currentCart, article]);
-    };
 
     // CONFIRMATION DE L'AJOUT AU PANIER
     const clickedBtn = document.getElementById(`btn${article.id}`);
@@ -23,7 +27,9 @@ function App() {
     setTimeout(() => {
       clickedBtn.classList.remove('clicked');
     }, 3000);
+  }
   };
+
   // SUPPRIMER DU PANIER  
   const removeFromCart = (articleToRemove) => {
     const updatedCart = currentCart.filter((article) => article !== articleToRemove);

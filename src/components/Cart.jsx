@@ -30,7 +30,8 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                                     </div>}
                                     <div className={`${styles.articleTitle} d-flex flex-column justify-content-center align-items-center`}>
                                         <h3>{article.titre}</h3>
-                                        <p>{article.prix}€</p>
+                                        <p>Quantité : {article.quantity}</p>
+                                        <p>Prix: {article.prix}€</p>
                                     </div>
                                     <i className="fa-solid fa-trash-can mr-15" onClick={()=>{removeFromCart(article)}}></i>
                                 </div>
