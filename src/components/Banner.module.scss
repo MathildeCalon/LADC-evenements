@@ -1,0 +1,15 @@
+.banderole {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2000/600;
+    overflow: hidden;
+};
+
+.banderole img {
+    width: 100%; 
+    height: auto; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px; 
+};

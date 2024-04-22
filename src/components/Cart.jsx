@@ -3,7 +3,7 @@ import logo from '/images/logo-banner.png';
 import 'animate.css';
 
 const Cart = ({currentCart, handleClose, removeFromCart}) => {
-    const totalSum = currentCart.reduce((acc, article) => acc + article.prix, 0);
+    const totalSum = currentCart.reduce((acc, article) => acc + article.totalPrice, 0);
     
     return (
         <form action="http://localhost:3000/contact" method="post">
@@ -30,7 +30,8 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                                     </div>}
                                     <div className={`${styles.articleTitle} d-flex flex-column justify-content-center align-items-center`}>
                                         <h3>{article.titre}</h3>
-                                        <p>{article.prix}€</p>
+                                        <p>Quantité : {article.quantity}</p>
+                                        <p>Prix: {article.totalPrice}€</p>
                                     </div>
                                     <i className="fa-solid fa-trash-can mr-15" onClick={()=>{removeFromCart(article)}}></i>
                                 </div>
