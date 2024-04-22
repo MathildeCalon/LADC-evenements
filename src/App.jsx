@@ -15,11 +15,13 @@ function App() {
     if(article.quantité_max > 1){
       const quantity = document.getElementById(`quantity-${article.id}`);
       article.quantity = quantity ? quantity.value : 1;
-      article.prix = article.prix * article.quantity;
+      article.totalPrice = article.prix * article.quantity;
     } else {
       article.quantity = 1;
+      article.totalPrice = article.prix;
     }
       setCurrentCart([...currentCart, article]);
+      console.log(article);
 
     // CONFIRMATION DE L'AJOUT AU PANIER
     const clickedBtn = document.getElementById(`btn${article.id}`);
