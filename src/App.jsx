@@ -21,7 +21,6 @@ function App() {
       article.totalPrice = article.prix;
     }
       setCurrentCart([...currentCart, article]);
-      console.log(article);
 
     // CONFIRMATION DE L'AJOUT AU PANIER
     const clickedBtn = document.getElementById(`btn${article.id}`);

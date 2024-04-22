@@ -20,7 +20,20 @@ export default function Articles ({addToCart}){
                 {article.quantité_max > 1 &&
                 <div className={styles.quantity}>
                     <label htmlFor="quantity">Quantité :</label>
-                    <input type="number" id={`quantity-${article.id}`} name="quantity" min="1" max={article.quantité_max} defaultValue="1" required/>
+                    <input 
+                    type="number" 
+                    id={`quantity-${article.id}`} 
+                    name="quantity" 
+                    min="1" 
+                    max={article.quantité_max} 
+                    defaultValue="1" 
+                    required
+                    onChange={(e) => {
+                        const value = parseInt(e.target.value);
+                        if (value > article.quantité_max){
+                            e.target.value = article.quantité_max;
+                        }
+                    }}/>
                 </div>
                 }
                 <div className={`${styles.addCart} d-flex align-items-center justify-content-center py-10 my-15`} onClick={()=>{addToCart(article)}} id={`btn${article.id}`}>
