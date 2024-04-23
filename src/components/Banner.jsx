@@ -19,7 +19,7 @@ export default function Banner () {
 
     return (
         <div className='d-flex flex-column p-20'>
-            <div className={`${styles.banderole} my-50`}>
+            <div className={`${styles.banderole}`}>
             {banderole.map((image, index) => (
                     <img
                         key={index}
