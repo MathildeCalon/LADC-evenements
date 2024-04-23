@@ -36,7 +36,7 @@ function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
         <header className={`${styles.header} d-flex flex-row align-items-center`}>
             <div className="flex-fill">
                 <a href='/'>
-                <img src={logo} alt="Logo de LADC Evenements"/>
+                <h1>LADC Evénements</h1>
                 </a>
             </div>
 
