@@ -21,7 +21,7 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
 
                         {currentCart.map((article) => (
 
-                            <div className={styles.article} key={article.id}>
+                            <div className={styles.article} key={article.id} id={`article${article.id}`}>
                                 <input type="hidden" name="articles" value={article.titre}/>
                                 <div className={`${styles.articleResume} d-flex align-items-center`}>
                                 {article.photo &&
@@ -37,27 +37,27 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
                                 </div>
                             </div>
                         ))}
-                        <input type="hidden" name="totalAmount" value={totalSum}/>
-                        <p className={styles.totalSum} data-totalAmount>Montal total : {totalSum}€</p>
+                        <input type="hidden" name="totalamount" value={totalSum}/>
+                        <p className={styles.totalSum} data-totalamount>Montal total : {totalSum}€</p>
 
 
                     {currentCart.length > 0 && (
                         <>
                     <div className='d-flex flex-column my-15'>
                         <h3 className='mb-10'>2. Votre date :</h3>
-                        <label for="startDate">Réservation souhaitée :</label>
+                        <label htmlFor="startDate">Réservation souhaitée :</label>
                         <input type="date" id="startDate" name="bookingStart" className={styles.startDate} required/>
                     </div>
 
                     <div className={styles.contactDetails}>
                         <h3 className='mb-10'>3. Vos coordonnées :</h3>
-                        <label for="prenom">Votre prénom :</label>
+                        <label htmlFor="prenom">Votre prénom :</label>
                         <input type='text' id='prenom' name='prenom' required className='mb-10'/>
 
-                        <label for="telephone">Votre numéro de téléphone :</label>
+                        <label htmlFor="telephone">Votre numéro de téléphone :</label>
                         <input type='tel' id='telephone' name='telephone' pattern='[0-9]{10}' required className='mb-10'/>
 
-                        <label for="email">Votre adresse email :</label>
+                        <label htmlFor="email">Votre adresse email :</label>
                         <input type='email' id='email' name='email' required className='mb-10'/>
                     </div>
 
