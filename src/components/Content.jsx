@@ -4,6 +4,7 @@ import Banner from './Banner';
 import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
 import Popup from './Popup';
+import 'animate.css';
 
 function Content({addToCart, togglePopup, newsIsOpen}) {
     return (
@@ -23,6 +24,7 @@ function Content({addToCart, togglePopup, newsIsOpen}) {
                     <img src="/images/anthony_coucke_framed.png" alt="Photo de Anthony Coucke"/>
                 </div>
             </div>
+
 
             <div className='my-100'>
                 <h2 id='liste-articles'>Nos articles</h2>

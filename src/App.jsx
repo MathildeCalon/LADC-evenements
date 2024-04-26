@@ -33,8 +33,13 @@ function App() {
 
   // SUPPRIMER DU PANIER  
   const removeFromCart = (articleToRemove) => {
+    const removedArticle = document.getElementById(`article${articleToRemove.id}`);
+    removedArticle.classList.add('animate__animated', 'animate__bounceOut');
+
+    setTimeout(() => {
     const updatedCart = currentCart.filter((article) => article !== articleToRemove);
     setCurrentCart(updatedCart);
+    }, 1000);
     return currentCart;
   };
 

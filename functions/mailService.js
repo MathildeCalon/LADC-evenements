@@ -15,7 +15,7 @@ let transporter = nodemailer.createTransport({
 
 const sendMails = {
     async sendContactMails(formData) {
-        const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        const { prenom, bookingStart, articles, totalamount, email, telephone } = formData;
         const startDate = new Date(bookingStart).toLocaleDateString();
         try {
             const contactMail = {
@@ -30,7 +30,7 @@ const sendMails = {
                 Téléphone : ${telephone}
                 Date souhaitée : ${startDate}
                 Articles : ${articles}
-                Montant total : ${totalAmount}€
+                Montant total : ${totalamount}€
                 
                 Merci de contacter cette personne rapidement.
                 `
@@ -42,7 +42,7 @@ const sendMails = {
     },
 
     async sendConfirmationMail(formData) {
-        const { prenom, bookingStart, articles, totalAmount, email, telephone } = formData;
+        const { prenom, bookingStart, articles, totalamount, email, telephone } = formData;
         const startDate = new Date(bookingStart).toLocaleDateString();
         try {
             const confirmationMail = {
@@ -57,7 +57,7 @@ const sendMails = {
                 Téléphone : ${telephone}
                 Date souhaitée : ${startDate}
                 Articles : ${articles}
-                Montant total : ${totalAmount}€
+                Montant total : ${totalamount}€
 
                 Nous prendrons rapidement contact avec vous à ce sujet.
                 `
