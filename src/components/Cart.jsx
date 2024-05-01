@@ -6,7 +6,7 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
     const totalSum = currentCart.reduce((acc, article) => acc + article.totalPrice, 0);
     
     return (
-        <form action="https://ladc-evenements.fr/contact" method="post">
+        <form action="https://ladc-evenements.fr/.netlify/functions/api" method="post">
         <div className={styles.cartPopUp}>
             <div className={`${styles.box}`}>
                 <i className={`fa-regular fa-circle-xmark ${styles.btnClose}`} onClick={handleClose}></i>
