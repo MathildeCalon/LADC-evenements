@@ -24,7 +24,7 @@ app.use(
 
 app.use(router);
 
-router.post('/contact', async (req, res) => {
+router.post('/.netlify/functions/api', async (req, res) => {
     const formData = req.body;
 
     try{
