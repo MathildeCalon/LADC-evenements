@@ -1,4 +1,5 @@
 import styles from './GaleriePhotos.module.scss';
+import galerie from '../../assets/galerie.json';
 
 const GaleriePhotos = () => {
     return (
@@ -19,6 +20,16 @@ const GaleriePhotos = () => {
 
             <div className='flex-fill container p-20'>
                 <h2>Galerie Photos</h2>
+                {galerie.map((photo) => (
+                    <div className={`${styles.element} d-flex justify-content-center align-items-center`}>
+                        <div className={styles.imageContainer}>
+                            <img src={`/images/galerie/${photo.url}`} alt={photo.description} className='m-20' style={{width: '100%'}}/>
+                        </div>
+                        <p>
+                            {photo.description}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
     )

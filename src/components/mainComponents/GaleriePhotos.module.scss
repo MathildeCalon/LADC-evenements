@@ -9,3 +9,12 @@
     position: fixed;
     z-index: 100;
 };
+
+.imageContainer {
+    width: 50vw;
+    justify-content: center;
+    img {
+        height: auto;
+        width: auto;
+    }
+}

@@ -63,6 +63,11 @@ function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
                         Contact
                         </button>
                     </a>
+                    <a href='/galeriephotos'>
+                        <button className='mr-15 btn btn-primary'>
+                            Galerie Photos
+                        </button>
+                    </a>
                     <button className={`btn btn-primary mr-15`} onClick={toggleCartPopUp}><i className="fa-solid fa-cart-shopping mr-5"/>Mon panier 
                     <span className={`${styles.cartLength} justify-content-center align-items-center ml-5`}>{currentCart.length}</span></button>
                 </ul>
