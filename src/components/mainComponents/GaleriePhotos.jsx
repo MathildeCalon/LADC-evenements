@@ -1,7 +1,15 @@
 import styles from './GaleriePhotos.module.scss';
 import galerie from '../../assets/galerie.json';
+import PhotoTheme from '../PhotoTheme.jsx';
 
 const GaleriePhotos = () => {
+    const themes = []; 
+    galerie.map((el) => 
+        {if(!themes.includes(el.theme)){
+            themes.push(el.theme);
+        }}
+    );
+
     return (
         <div className={`d-flex flex-column ${styles.appContainer}`}>
             <header className={`${styles.header} d-flex flex-row align-items-center`}>
@@ -20,16 +28,9 @@ const GaleriePhotos = () => {
 
             <div className='flex-fill container p-20'>
                 <h2>Galerie Photos</h2>
-                {galerie.map((photo) => (
-                    <div className={`${styles.element} d-flex justify-content-center align-items-center`}>
-                        <div className={styles.imageContainer}>
-                            <img src={`/images/galerie/${photo.url}`} alt={photo.description} className='m-20' style={{width: '100%'}}/>
-                        </div>
-                        <p>
-                            {photo.description}
-                        </p>
-                    </div>
-                ))}
+                    {themes.map(el => (
+                    <PhotoTheme theme = {el}></PhotoTheme>
+                    ))}
             </div>
         </div>
     )
