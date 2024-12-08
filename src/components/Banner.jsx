@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 export default function Banner () {
     const [currentImage, setCurrentImage] = useState(0);
     const banderole = [
-        'bandeau_slogan.png',
-        'bandeau_bartop.png'
+        'banner_moment.jpeg',
+        'banner_asso_15.jpeg',
+        'banner_bartop.jpeg',
     ];
 
     useEffect(() => {

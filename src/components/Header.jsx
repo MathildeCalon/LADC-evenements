@@ -2,9 +2,8 @@ import styles from './Header.module.scss';
 import logo from '/images/logo-banner.png';
 import { useState, useEffect, useRef } from 'react';
 import Cart from './Cart';
-import Popup from './Popup';
 
-function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
+function Header ({currentCart, removeFromCart}){
     // POUR OUVRIR LE PANIER
     const [cartIsOpen, setCartIsOpen] = useState(false);
     const toggleCartPopUp = () => {
@@ -34,9 +33,9 @@ function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
 
     return (
         <header className={`${styles.header} d-flex flex-row align-items-center`}>
-            <div className="flex-fill">
+            <div className={`${styles.logoHeader} flex-fill`}>
                 <a href='/'>
-                <h1>LADC Evénements</h1>
+                <img src='/images/logo_2025_detoure.jpeg'></img>
                 </a>
             </div>
 
@@ -50,9 +49,6 @@ function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
                         Présentation
                         </button>
                     </a>
-                    <button className='mr-15 btn btn-primary' onClick={togglePopup}>
-                    Newsletter
-                    </button>
                     <a href='#liste-articles' onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Liste des articles
@@ -72,10 +68,6 @@ function Header ({currentCart, removeFromCart, togglePopup, newsIsOpen}){
                 handleClose={toggleCartPopUp}
                 />}
                 </nav>
-            
-                {newsIsOpen && <Popup
-                handleClose={togglePopup}
-                />}
         </header>
     )
 }
