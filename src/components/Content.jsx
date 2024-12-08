@@ -12,7 +12,7 @@ function Content({addToCart}) {
             <Banner />
 
             <h2 id="presentation" className="d-flex">Bienvenue chez LADC ÉVÉNEMENTS.</h2>
-            <div className={`${styles.presentation} d-flex flew-column flex-fill mb-20`}>
+            <div className={`${styles.presentation} d-flex flew-column flex-fill`}>
                 <div className={`${styles.textPresentation} m-10 flex-column`}>
                     <p>À Thumeries et ses environs, nous sommes votre partenaire incontournable pour faire de vos événements des moments exceptionnels. Chez LADC ÉVÉNEMENTS, nous mettons à votre disposition un vaste choix de matériel événementiel à la location, que ce soit pour des associations ou des particuliers, le tout à des tarifs très abordables.
                     </p>
