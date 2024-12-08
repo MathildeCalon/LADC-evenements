@@ -3,10 +3,9 @@ import Articles from './Article';
 import Banner from './Banner';
 import React, { useState, useEffect } from 'react';
 import HubspotForm from 'react-hubspot-form';
-import Popup from './Popup';
 import 'animate.css';
 
-function Content({addToCart, togglePopup, newsIsOpen}) {
+function Content({addToCart}) {
     return (
         <div className='flex-fill container p-20'>
             
@@ -19,9 +18,6 @@ function Content({addToCart, togglePopup, newsIsOpen}) {
                     </p>
                     <p>LADC ÉVÉNEMENTS s'engage à rendre votre expérience de location simple, agréable et sans tracas. Nous sommes là pour vous conseiller et vous accompagner à chaque étape, assurant ainsi le succès de votre événement. De plus, nous proposons notre présence lors de votre événement, vous laissant ainsi libre de savourer pleinement chaque moment.
                     </p>
-                </div>
-                <div className={`${styles.imgAnthony} d-flex`}>
-                    <img src="/images/anthony_coucke_framed.png" alt="Photo de Anthony Coucke"/>
                 </div>
             </div>
 
@@ -44,14 +40,6 @@ function Content({addToCart, togglePopup, newsIsOpen}) {
                         loading={<div>Chargement...</div>}
                     />
             </div>
-
-            <div className={`${styles.sideBar} p-10`} onClick={togglePopup}>
-            NEWSLETTER
-            </div>
-
-            {newsIsOpen && <Popup
-            handleClose={togglePopup}
-            />}
         </div>
     )
 }
