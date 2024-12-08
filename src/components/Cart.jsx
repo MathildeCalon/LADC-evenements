@@ -1,5 +1,5 @@
 import styles from './Cart.module.scss';
-import logo from '/images/logo-banner.png';
+import logo from '/images/logo_2025_detoure.jpeg';
 import 'animate.css';
 
 const Cart = ({currentCart, handleClose, removeFromCart}) => {
@@ -11,7 +11,9 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
             <div className={`${styles.box}`}>
                 <i className={`fa-regular fa-circle-xmark ${styles.btnClose}`} onClick={handleClose}></i>
                 <div className={`d-flex flex-column justify-content-center align-items-center p-20`}>
-                    <img src={logo} alt="Logo de LADC Evenements"/>
+                    <div className={styles.logoContainer}>
+                        <img src={logo} alt="Logo de LADC Evenements"/>
+                    </div>
 
                     <div className={`${styles.cartContainer} d-flex flex-column justify-content-center align-items-center`}>                
                         <h3>1. Vos articles souhaités :</h3>                       
@@ -43,22 +45,30 @@ const Cart = ({currentCart, handleClose, removeFromCart}) => {
 
                     {currentCart.length > 0 && (
                         <>
-                    <div className='d-flex flex-column my-15'>
+                    <div className={`${styles.dateContainer} d-flex flex-column my-15`}>
                         <h3 className='mb-10'>2. Votre date :</h3>
-                        <label htmlFor="startDate">Réservation souhaitée :</label>
-                        <input type="date" id="startDate" name="bookingStart" className={styles.startDate} required/>
+                        <div className={styles.inputContainer}>
+                            <label htmlFor="startDate">Réservation souhaitée :</label>
+                            <input type="date" id="startDate" name="bookingStart" className={styles.startDate} required/>
+                        </div>
                     </div>
 
                     <div className={styles.contactDetails}>
                         <h3 className='mb-10'>3. Vos coordonnées :</h3>
-                        <label htmlFor="prenom">Votre prénom :</label>
-                        <input type='text' id='prenom' name='prenom' required className='mb-10'/>
+                        <div className={styles.inputContainer}>
+                            <label htmlFor="prenom">Votre prénom :</label>
+                            <input type='text' id='prenom' name='prenom' required className='mb-10'/>
+                        </div>
 
-                        <label htmlFor="telephone">Votre numéro de téléphone :</label>
-                        <input type='tel' id='telephone' name='telephone' pattern='[0-9]{10}' required className='mb-10'/>
+                        <div className={styles.inputContainer}>
+                            <label htmlFor="telephone">Votre numéro de téléphone :</label>
+                            <input type='tel' id='telephone' name='telephone' pattern='[0-9]{10}' required className='mb-10'/>
+                        </div>
 
-                        <label htmlFor="email">Votre adresse email :</label>
-                        <input type='email' id='email' name='email' required className='mb-10'/>
+                        <div className={styles.inputContainer}>
+                            <label htmlFor="email">Votre adresse email :</label>
+                            <input type='email' id='email' name='email' required className='mb-10'/>
+                        </div>
                     </div>
 
                     {currentCart.length > 0 && ( 

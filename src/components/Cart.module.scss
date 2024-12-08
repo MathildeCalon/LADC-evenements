@@ -59,6 +59,21 @@
     }
 }
 
+.logoContainer img {
+    height: 150px;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.dateContainer {
+    width: 50%;
+    justify-content: space-between;
+}
+
 .articleTitle {
     font-size: 0.8rem;
 }
@@ -72,7 +87,7 @@
 }
 
 .startDate{
-    width: 60%;
+    width: 30%;
     margin-bottom: 40px;
 }
 
@@ -82,7 +97,7 @@
 }
 
 .contactDetails {
-    width: 30%;
+    width: 50%;
 }
 
 @media screen and (max-width: 960px) {
