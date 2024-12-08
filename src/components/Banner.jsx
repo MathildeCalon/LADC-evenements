@@ -5,7 +5,6 @@ export default function Banner () {
     const [currentImage, setCurrentImage] = useState(0);
     const banderole = [
         'bandeau_slogan.png',
-        'bandeau15.png',
         'bandeau_bartop.png'
     ];
 
