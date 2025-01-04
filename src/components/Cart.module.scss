@@ -39,7 +39,7 @@
 
 .article{
     border-radius: 20px;
-    background-color: var(--header-footer-color);
+    background-color: var(--main-background-color);
     margin: 10px;
     width: 60%;
     height: 150px;
@@ -82,7 +82,7 @@
     font-weight: bold;
     margin-bottom: 40px;
     padding: 10px;
-    background-color: var(--header-footer-color);
+    background-color: var(--main-background-color);
     border-radius: 20px;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .noArticle {
-    background-color: var(--header-footer-color);
+    background-color: var(--main-background-color);
     border-radius: 20px;
 }
 

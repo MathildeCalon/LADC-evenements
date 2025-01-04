@@ -5,7 +5,6 @@ export default function Banner () {
     const [currentImage, setCurrentImage] = useState(0);
     const banderole = [
         'banner_moment.jpeg',
-        'banner_asso_15.jpeg',
         'banner_bartop.jpeg',
     ];
 
