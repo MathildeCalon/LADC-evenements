@@ -43,17 +43,17 @@ function Header ({currentCart, removeFromCart}){
                     <i className="fa-solid fa-bars"/>
                 </div>
                 <ul className={`${styles.navLinks} ${isMenuOpen ? 'show' : ''}`} ref={menuRef}>
-                    <a href="#presentation" onClick={toggleMenu}>
+                    <a href="/" onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Présentation
                         </button>
                     </a>
-                    <a href='#liste-articles' onClick={toggleMenu}>
+                    <a href='/articles' onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Liste des articles
                         </button>
                     </a>
-                    <a href='#contact'  onClick={toggleMenu}>
+                    <a href='/contact'  onClick={toggleMenu}>
                         <button className='mr-15 btn btn-primary'>
                         Contact
                         </button>

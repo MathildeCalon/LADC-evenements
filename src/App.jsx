@@ -1,12 +1,21 @@
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import Content from './components/Content.jsx';
-import styles from './App.module.scss';
+import React from 'react';
+import HomePage from './pages/HomePage';
+import ArticlesPage from './pages/ArticlesPage';
+import ContactPage from './pages/ContactPage';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import 'animate.css';
 
 function App() {
-  const [currentCart, setCurrentCart] = useState([]);
+  const [currentCart, setCurrentCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // SAUVEGARDER LE PANIER DANS LOCALSTORAGE A CHAQUE MISE A JOUR
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+  }, [currentCart]);
 
   // AJOUT AU PANIER
   const addToCart = (article) => {
@@ -44,18 +53,17 @@ function App() {
     return currentCart;
   };
 
-  // POUR OUVRIR LA POPUP NEWSLETTER
-  // const [newsIsOpen, setNewsIsOpen] = useState(false);
-  // const togglePopup = () => {
-  //     setNewsIsOpen(!newsIsOpen);
-  // };
-
   return (
-    <div className={`d-flex flex-column ${styles.appContainer}`}>
-      <Header currentCart={currentCart} removeFromCart={removeFromCart} />
-      <Content addToCart={addToCart}/>
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" 
+        element={<HomePage currentCart={currentCart} removeFromCart={removeFromCart}/>} />
+        <Route exact path="/articles" 
+        element={<ArticlesPage addToCart={addToCart} currentCart={currentCart} removeFromCart={removeFromCart}/>} />
+        <Route exact path="/contact"
+        element={<ContactPage currentCart={currentCart} removeFromCart={removeFromCart}/>} />
+      </Routes>
+    </Router>
   )
 }
 
