@@ -100,7 +100,7 @@
         "titre": "Spot lumière",
         "description": "A l'unité, 4 maximum",
         "prix": 6,
-        "photo": "spot_lumière.png",
+        "photo": "spot_lumiere.png",
         "quantité_max": 4
     },
     {

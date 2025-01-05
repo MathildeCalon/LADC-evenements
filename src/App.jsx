@@ -8,16 +8,6 @@ import 'animate.css';
 function App() {
   const [currentCart, setCurrentCart] = useState([]);
 
-  useEffect(() => {
-    const savedCart = localStorage.getItem('cart');
-    if(savedCart)
-      setCurrentCart(JSON.parse(savedCart));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(currentCart));
-  }, [currentCart]);
-
   // AJOUT AU PANIER
   const addToCart = (article) => {
     const check = currentCart.find((item) => item.id === article.id);
@@ -30,7 +20,8 @@ function App() {
         article.quantity = 1;
         article.totalPrice = article.prix;
       }
-        setCurrentCart([...currentCart, article]);
+      const updatedCart = [...currentCart, article];
+      setCurrentCart(updatedCart);
 
       // CONFIRMATION DE L'AJOUT AU PANIER
       const clickedBtn = document.getElementById(`btn${article.id}`);
@@ -50,7 +41,6 @@ function App() {
       const updatedCart = currentCart.filter((article) => article !== articleToRemove);
       setCurrentCart(updatedCart);
     }, 1000);
-
     return currentCart;
   };
 
