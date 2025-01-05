@@ -5,10 +5,10 @@ import Articles from '../components/Article.jsx';
 import styles from '../components/Content.module.scss';
 import 'animate.css';
 
-function ArticlesPage(currentCart, addToCart){
+function ArticlesPage({currentCart, addToCart, removeFromCart}){
     return (
         <div className={`d-flex flex-column ${styles.appContainer}`}>
-        <Header currentCart={currentCart}/>
+        <Header currentCart={currentCart} removeFromCart={removeFromCart}/>
         <div className={styles.mainDiv}>
                 <h2 id='liste-articles'>Nos articles</h2>
                 <div className={`card p-20 ${styles.contentCard}`}>

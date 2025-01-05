@@ -6,7 +6,7 @@ import styles from '../App.module.scss';
 import { useState, useEffect } from 'react';
 import 'animate.css';
 
-function HomePage(currentCart, removeFromCart){
+function HomePage({currentCart, removeFromCart}){
     return (
         <div className={`d-flex flex-column ${styles.appContainer}`}>
         <Header currentCart={currentCart} removeFromCart={removeFromCart} />

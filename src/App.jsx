@@ -45,12 +45,6 @@ function App() {
     return currentCart;
   };
 
-  // POUR OUVRIR LA POPUP NEWSLETTER
-  // const [newsIsOpen, setNewsIsOpen] = useState(false);
-  // const togglePopup = () => {
-  //     setNewsIsOpen(!newsIsOpen);
-  // };
-
   return (
     <Router>
       <Routes>

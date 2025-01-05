@@ -3,7 +3,6 @@ import logo from '/images/logo_2025_detoure.jpeg';
 import 'animate.css';
 
 const Cart = ({currentCart, handleClose, removeFromCart}) => {
-    console.log(currentCart)
     const totalSum = currentCart.reduce((acc, article) => acc + article.totalPrice, 0);
     
     return (
