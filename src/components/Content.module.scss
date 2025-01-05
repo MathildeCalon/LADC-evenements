@@ -1,3 +1,12 @@
+.appContainer {
+    min-height: 100vh;
+}
+
+.mainDiv {
+    margin: auto;
+    margin-top: 150px;
+}
+
 .grid {
     display: grid;
     place-content: center;
@@ -36,6 +45,7 @@
     border-radius: 10px;
     width: 50%;
     margin: auto;
+    margin-top: 150px;
 }
 
 .sideBar {
