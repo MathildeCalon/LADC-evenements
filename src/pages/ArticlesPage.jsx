@@ -8,17 +8,17 @@ import 'animate.css';
 function ArticlesPage({currentCart, addToCart, removeFromCart}){
     return (
         <div className={`d-flex flex-column ${styles.appContainer}`}>
-        <Header currentCart={currentCart} removeFromCart={removeFromCart}/>
-        <div className={styles.mainDiv}>
-                <h2 id='liste-articles'>Nos articles</h2>
-                <div className={`card p-20 ${styles.contentCard}`}>
-                    <div className={styles.grid}>
-                        <Articles addToCart={addToCart}/>
+            <Header currentCart={currentCart} removeFromCart={removeFromCart}/>
+                <div className={styles.mainDiv}>
+                    <h2 id='liste-articles'>Nos articles</h2>
+                    <div className={`card p-20 ${styles.contentCard}`}>
+                        <div className={styles.grid}>
+                            <Articles addToCart={addToCart}/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <Footer />
-      </div>
+            <Footer />
+        </div>
     )
 }
 

@@ -7,7 +7,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import 'animate.css';
 
 function App() {
-  const [currentCart, setCurrentCart] = useState([]);
+  const [currentCart, setCurrentCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // SAUVEGARDER LE PANIER DANS LOCALSTORAGE A CHAQUE MISE A JOUR
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(currentCart));
+  }, [currentCart]);
 
   // AJOUT AU PANIER
   const addToCart = (article) => {
