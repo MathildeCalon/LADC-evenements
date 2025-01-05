@@ -1,5 +1,4 @@
 import styles from './Header.module.scss';
-import logo from '/images/logo-banner.png';
 import { useState, useEffect, useRef } from 'react';
 import Cart from './Cart';
 

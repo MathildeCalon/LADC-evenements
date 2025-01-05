@@ -19,7 +19,7 @@
     "id":"3",
     "titre": "Jeux de lumière",
     "description": "A l'unité, 4 maximum",
-    "prix": 10,
+    "prix": 12,
     "photo": "jeux_de_lumiere.png",
     "quantité_max": 4
     },
@@ -67,7 +67,7 @@
     "id":"9",
     "titre": "Vidéoprojecteur",
     "description": "",
-    "prix": 40,
+    "prix": 30,
     "photo": "videoprojecteur.png",
     "quantité_max": 1
     },
@@ -94,5 +94,21 @@
     "prix": 40,
     "photo": "barbe_a_papa.png",
     "quantité_max": 1
+    },
+    {
+        "id":"16",
+        "titre": "Spot lumière",
+        "description": "A l'unité, 4 maximum",
+        "prix": 6,
+        "photo": "spot_lumiere.png",
+        "quantité_max": 4
+    },
+    {
+        "id":"17",
+        "titre": "Casque VR QUEST 3S",
+        "description": "",
+        "prix": 40,
+        "photo": "casque_vr.png",
+        "quantité_max": 1
     }
 ]
