@@ -110,5 +110,29 @@
         "prix": 40,
         "photo": "casque_vr.png",
         "quantité_max": 1
+    },
+    {
+        "id":"18",
+        "titre": "Distributeur de capsules",
+        "description": "",
+        "prix": 30,
+        "photo": "distributeur_capsules.png",
+        "quantité_max": 1
+    },
+    {
+        "id":"19",
+        "titre": "Table à glisser",
+        "description": "1m20 de longueur",
+        "prix": 15,
+        "photo": "table_a_glisser.png",
+        "quantité_max": 1
+    },
+    {
+        "id":"20",
+        "titre": "Billard japonais",
+        "description": "1m20 de longueur",
+        "prix": 15,
+        "photo": "billard_japonais.png",
+        "quantité_max": 1
     }
 ]
